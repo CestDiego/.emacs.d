@@ -1,0 +1,5 @@
+(require 'dired-details)
+(setq-default dired-details-hidden-string "")
+(dired-details-install)
+(setq dired-listing-switches "-alGh")
+(provide 'setup-dired)

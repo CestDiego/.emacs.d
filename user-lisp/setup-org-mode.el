@@ -12,6 +12,9 @@
 ;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
 (setq org-replace-disputed-keys t)
 
+(setq org-hide-leading-stars t)
+(setq org-odd-levels-only t)
+
 ;; TODO progress logging stuff
 (setq org-log-done 'time)
 

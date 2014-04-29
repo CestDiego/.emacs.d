@@ -3,6 +3,18 @@
 (require 'multi-term)
 (setq multi-term-dedicated-select-after-open-p t)
 
+;; enable cua and transient mark modes in term-line-mode
+(defadvice term-line-mode (after term-line-mode-fixes ())
+  (set (make-local-variable 'cua-mode) t)
+  (set (make-local-variable 'transient-mark-mode) t))
+(ad-activate 'term-line-mode)
+
+;; disable cua and transient mark modes in term-char-mode
+(defadvice term-char-mode (after term-char-mode-fixes ())
+  (set (make-local-variable 'cua-mode) nil)
+  (set (make-local-variable 'transient-mark-mode) nil))
+(ad-activate 'term-char-mode)
+
 (when (require 'term nil t) ; only if term can be loaded..
   (setq term-bind-key-alist
         (list (cons "C-c C-c" 'term-interrupt-subjob)
@@ -27,14 +39,15 @@
          (output (cdr (assoc char term-function-key-alist))))
     (term-send-raw-string output)))
 
-(defconst term-function-key-alist '((f1 . "\e[OP")
-                                    (f2 . "\e[OQ")
-                                    (f3 . "\e[OR")
-                                    (f4 . "\e[OS")))
+(defconst term-function-key-alist '((f1 . "\eOP")
+                                    (f2 . "\eOQ")
+                                    (f3 . "\eOR")
+                                    (f4 . "\eOS")
+                                    (f5 . "\eOT")
+                                    (f6 . "\eOU")
+))
 
 (dolist (spec term-function-key-alist)
   (define-key term-raw-map
     (read-kbd-macro (format "<%s>" (car spec)))
     'term-send-function-key))
-
-(provide 'setup-multiterm)

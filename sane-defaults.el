@@ -97,4 +97,7 @@
 ;; that you can always see what's happening.
 (setq eval-expression-print-level nil)
 
+(cua-mode 1)
+(setq auto-save-default nil)
+
 (provide 'sane-defaults)

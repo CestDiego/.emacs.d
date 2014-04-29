@@ -53,6 +53,7 @@
      flx-ido
      ido-ubiquitous
      evil
+     surround
      evil-visualstar
      smartparens
      rainbow-delimiters
@@ -79,9 +80,9 @@
      itail
      expand-region
      diff-hl
-     pretty-mode-plus
      powerline
      diminish
+     pretty-mode
      org
 
      ;; Clojure

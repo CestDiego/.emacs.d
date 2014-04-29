@@ -15,10 +15,9 @@
     (add-to-list 'custom-theme-load-path path)))
 
 (when (window-system)
-  (set-frame-font "Source Code Pro")
-  (set-face-attribute 'default nil :font "Source Code Pro" :height 120)
-  (set-face-font 'default "Source Code Pro"))
-
+  (set-frame-font "Monaco")
+  (set-face-attribute 'default nil :family "Monaco" :height 110 :weight 'bold)
+  (set-face-font 'default "Monaco"))
 (load-theme 'zenburn)
 
 ;; Don't defer screen updates when performing operations
@@ -34,5 +33,6 @@
 (setq initial-scratch-message "")
 
 (require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 (provide 'appearance)

@@ -81,6 +81,7 @@
      diff-hl
      pretty-mode-plus
      powerline
+     diminish
      org
 
      ;; Clojure

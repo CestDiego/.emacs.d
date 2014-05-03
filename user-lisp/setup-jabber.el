@@ -1,6 +1,8 @@
 (require 'jabber-autoloads)
 (require 'auth-source)
 
+;; for best experience install 'gnutls' and 'terminal-notifier'
+
 ;; Jabber client configuration
 (defadvice jabber-connect-all (before jabber-read-from-authinfo)
   (let ((auths (auth-source-search :port "xmpp"
@@ -55,8 +57,9 @@
        (interactive)
        (jabber-send-presence "xa" "" 10)))
 
-  (define-key jabber-chat-mode-map (kbd "RET") 'newline)
-  (define-key jabber-chat-mode-map [C-return] 'jabber-chat-buffer-send))
+  ;(define-key jabber-chat-mode-map (kbd "RET") 'newline)
+  ;(define-key jabber-chat-mode-map [C-return] 'jabber-chat-buffer-send)
+)
 
 ;; http://stackoverflow.com/questions/5583413/how-do-i-get-jabber-el-to-not-show-the-user-icons
 (setq
@@ -153,5 +156,9 @@ for large histories.  Adapted from `jabber-chat-create-buffer'."
 
 (add-hook 'jabber-activity-update-hook 'jabber-urgency-hint)
 
+(require 'evil)
+(add-hook 'jabber-chat-mode-hook 'evil-emacs-state)
+(add-hook 'jabber-browse-mode-hook 'evil-emacs-state)
+(add-hook 'jabber-roster-mode-hook 'evil-emacs-state)
 
 (provide 'setup-jabber)

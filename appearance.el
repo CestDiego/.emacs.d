@@ -35,4 +35,10 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+(fringe-mode -1)
+(set-fringe-mode '(0 . 0))
+(set-face-attribute 'mode-line nil  :inverse-video nil :box nil)
+(set-face-attribute 'mode-line-inactive nil :box nil)
+(set-face-attribute 'vertical-border nil :foreground "#383838")
+
 (provide 'appearance)

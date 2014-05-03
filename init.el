@@ -79,14 +79,21 @@
      twittering-mode
      itail
      expand-region
-     diff-hl
+     git-gutter
      powerline
      diminish
      pretty-mode
      org
 
      ;; Clojure
+     ac-nrepl
      cider
+
+     ;; YAML
+     yaml-mode
+
+     ;; HTML
+     emmet-mode
      )))
 
 (condition-case nil

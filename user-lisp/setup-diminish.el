@@ -28,6 +28,9 @@
 (eval-after-load "eldoc"
   '(diminish 'eldoc-mode))
 
+(eval-after-load "git-gutter"
+  '(diminish 'git-gutter-mode))
+
 (eval-after-load "whitespace-cleanup-mode"
   '(diminish 'whitespace-cleanup-mode))
 

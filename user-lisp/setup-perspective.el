@@ -61,13 +61,7 @@
 (defun custom-persp/twitter ()
   (interactive)
   (custom-persp "@Twitter" (twit)))
-(define-key persp-mode-map (kbd "C-x p w") 'custom-persp/twitter)
-
-(defun custom-persp/terminal ()
-  (interactive)
-  (custom-persp "@terminal"
-                (multi-term-next)))
-(define-key persp-mode-map (kbd "C-x p t") 'custom-persp/terminal)
+(define-key persp-mode-map (kbd "C-x p t") 'custom-persp/twitter)
 
 (defun custom-persp/org ()
   (interactive)

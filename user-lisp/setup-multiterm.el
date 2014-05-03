@@ -42,10 +42,7 @@
 (defconst term-function-key-alist '((f1 . "\eOP")
                                     (f2 . "\eOQ")
                                     (f3 . "\eOR")
-                                    (f4 . "\eOS")
-                                    (f5 . "\eOT")
-                                    (f6 . "\eOU")
-))
+                                    (f4 . "\eOS")))
 
 (dolist (spec term-function-key-alist)
   (define-key term-raw-map

@@ -13,7 +13,6 @@
 ;; decent navigation like a good citizen
 (global-set-key (kbd "<C-tab>") 'persp-cycle-next)
 (global-set-key (kbd "<C-S-tab>") 'persp-cycle-prev)
-(global-set-key (kbd "M-C-f") 'toggle-frame-fullscreen)
 
 ;; dash
 (global-set-key "\C-cd" 'dash-at-point)

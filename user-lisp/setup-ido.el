@@ -15,7 +15,7 @@
 (setq ido-use-faces nil)
 
 ;; Use ido everywhere
-;; (require 'ido-ubiquitous)
-;; (ido-ubiquitous-mode 1)
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
 
 (provide 'setup-ido)

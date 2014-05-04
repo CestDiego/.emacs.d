@@ -46,48 +46,52 @@
   (packages-install
    '(dired-details
      auto-complete
-     flycheck
      gist
-     evil-paredit
      yasnippet
      flx-ido
      ido-ubiquitous
      evil
-     surround
      evil-visualstar
+     surround
      smartparens
      rainbow-delimiters
-     restclient
      magit
+     git-gutter
      helm
      helm-themes
      helm-c-yasnippet
-     dash-at-point
      perspective
      projectile
      multi-term
      exec-path-from-shell
      whitespace-cleanup-mode
-     erc-terminal-notifier
      saveplace
      vagrant
      browse-kill-ring
-     quickrun
      guide-key
-     prodigy
-     jabber
-     twittering-mode
-     itail
      expand-region
-     git-gutter
-     powerline
      diminish
      pretty-mode
      org
+     jabber
+     twittering-mode
+     itail
+     prodigy
+     restclient
+
+     ;; OSX
+     erc-terminal-notifier
+     dash-at-point
 
      ;; Clojure
      ac-nrepl
      cider
+     cider-tracing
+     clj-refactor
+     clojure-cheatsheet
+     clojure-snippets
+     latest-clojure-libraries
+     align-cljlet
 
      ;; YAML
      yaml-mode

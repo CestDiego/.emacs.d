@@ -1,22 +1,29 @@
 (require 'cider)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq nrepl-hide-special-buffers t)
+(setq cider-repl-pop-to-buffer-on-connect nil)
+(setq cider-popup-stacktraces nil)
+(setq cider-repl-popup-stacktraces t)
+(setq cider-auto-select-error-buffer t)
+(setq cider-stacktrace-default-filters '(tooling dup))
+(setq nrepl-buffer-name-separator "-")
+(setq nrepl-buffer-name-show-port t)
+(setq cider-repl-display-in-current-window t)
+(setq cider-repl-print-length 100)
+(setq cider-prompt-save-file-on-load nil)
+(setq cider-repl-result-prefix ";; => ")
+(setq cider-interactive-eval-result-prefix ";; => ")
+(setq cider-repl-use-clojure-font-lock t)
+(setq cider-repl-wrap-history t)
+(setq cider-repl-history-size 1000)
+(setq cider-repl-history-file "~/.emacs.d/cider-history")
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
-
-(setq nrepl-hide-special-buffers t)
-(setq cider-repl-tab-command 'indent-for-tab-command)
-
-(setq cider-repl-pop-to-buffer-on-connect nil)
-(setq cider-popup-stacktraces nil)
-(setq cider-repl-popup-stacktraces t)
-(setq cider-auto-select-error-buffer t)
-(setq cider-repl-history-file "~/.emacs.d/cider-history")
-(setq cider-repl-wrap-history t)
 
 (require 'ac-nrepl)
 (add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
@@ -43,5 +50,12 @@
   (HEAD 2)
   (ANY 2)
   (context 2))
+
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-m")))
+
+(require 'align-cljlet)
 
 (provide 'setup-cider)

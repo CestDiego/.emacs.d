@@ -17,10 +17,8 @@
       '(helm-c-source-buffers-list ;; list of all open buffers
         helm-c-source-recentf    ;; all recent files
         helm-c-source-files-in-current-dir)) ;; files in current directory
-    '(;; helm-c-source-locate               ;; file anywhere
-      helm-c-source-bookmarks            ;; bookmarks too
-      helm-c-source-buffer-not-found     ;; ask to create a buffer otherwise
-      ))
+    '(helm-c-source-bookmarks            ;; bookmarks too
+      helm-c-source-buffer-not-found))     ;; ask to create a buffer otherwise
    "*all-seeing-eye*"))
 
 (provide 'setup-helm)

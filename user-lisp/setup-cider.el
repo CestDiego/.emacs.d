@@ -42,6 +42,10 @@
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 (define-clojure-indent
+  (fact 'defun)
+  (facts 'defun)
+  (against-background 'defun)
+  (provided 0)
   (defroutes 'defun)
   (GET 2)
   (POST 2)
@@ -57,5 +61,8 @@
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 (require 'align-cljlet)
+
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
 
 (provide 'setup-cider)

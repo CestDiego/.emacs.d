@@ -92,6 +92,8 @@
      clojure-snippets
      latest-clojure-libraries
      align-cljlet
+     slamhound
+     midje-mode
 
      ;; YAML
      yaml-mode

@@ -15,6 +15,9 @@
 (setq org-hide-leading-stars t)
 (setq org-odd-levels-only t)
 
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
 ;; TODO progress logging stuff
 (setq org-log-done 'time)
 

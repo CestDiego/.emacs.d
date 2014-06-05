@@ -99,6 +99,9 @@
      ;; HTML
      emmet-mode
 
+     ;; Coffeescript
+     coffee-mode
+
      ;; Javascript
      js2-mode
      js2-refactor

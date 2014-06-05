@@ -10,12 +10,12 @@
   (interactive)
   (helm-other-buffer
    (append ;; projectile errors out if you're not in a project 
+    '(helm-c-source-buffers-list) ;; list of all open buffers
     (if (projectile-project-p) ;; so look before you leap
         '(helm-source-projectile-buffers-list
           helm-source-projectile-recentf-list
           helm-source-projectile-files-list)
-      '(helm-c-source-buffers-list ;; list of all open buffers
-        helm-c-source-recentf    ;; all recent files
+      '(helm-c-source-recentf    ;; all recent files
         helm-c-source-files-in-current-dir)) ;; files in current directory
     '(helm-c-source-bookmarks            ;; bookmarks too
       helm-c-source-buffer-not-found))     ;; ask to create a buffer otherwise

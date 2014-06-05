@@ -101,6 +101,10 @@
      ;; HTML
      emmet-mode
 
+     ;; Python
+     virtualenvwrapper
+     flycheck
+
      ;; Coffeescript
      coffee-mode
 

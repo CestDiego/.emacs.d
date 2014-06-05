@@ -72,7 +72,7 @@
      expand-region
      diminish
      pretty-mode
-     org
+     org-plus-contrib
      jabber
      twittering-mode
      itail
@@ -98,6 +98,12 @@
 
      ;; HTML
      emmet-mode
+
+     ;; Javascript
+     js2-mode
+     js2-refactor
+     ac-js2
+     skewer-mode
      )))
 
 (condition-case nil

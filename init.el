@@ -52,7 +52,7 @@
      ido-ubiquitous
      evil
      evil-visualstar
-     surround
+     evil-surround				
      smartparens
      rainbow-delimiters
      magit

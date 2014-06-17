@@ -32,6 +32,14 @@
 (set-cursor-color "firebrick")
 (setq initial-scratch-message "")
 
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (when window-system
+    (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 

@@ -13,7 +13,7 @@
 ;; decent navigation like a good citizen
 (global-set-key (kbd "<C-tab>") 'persp-cycle-next)
 (global-set-key (kbd "<C-S-iso-lefttab>") 'persp-cycle-prev)
-(global-set-key (kbd "C-M-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "<C-f11>") 'toggle-fullscreen)
 
 ;; This i to bind Zoom in And Zoom Out with mouse, fuck yeah
 (global-set-key [C-mouse-4] 'text-scale-increase)

@@ -98,12 +98,28 @@
      ;; YAML
      yaml-mode
 
+      ;; Org Mode
+      o-blog
+      org2blog
+ 
+      ;; Zeal (Dash Replacement for Linux)
+      zeal-at-point
+ 
+      ;; LaTeX
+      auctex
+      latex-preview-pane
+      ac-math
+      ebib
+      gnuplot-mode
+    
      ;; HTML
      emmet-mode
+     web-mode
 
      ;; Python
      virtualenvwrapper
      flycheck
+     jedi
 
      ;; Coffeescript
      coffee-mode

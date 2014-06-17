@@ -105,6 +105,9 @@
       ;; Zeal (Dash Replacement for Linux)
       zeal-at-point
  
+      ;; MATLAB
+      matlab-mode
+
       ;; LaTeX
       auctex
       latex-preview-pane

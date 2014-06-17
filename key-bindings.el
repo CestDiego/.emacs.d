@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-c o") 'helm-overlord)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-<SPC>") 'helm-M-x)
-(global-set-key (kbd "C-§") 'helm-yas-complete)
+(global-set-key (kbd "C-`") 'helm-yas-complete)
 
 ;; Org
 (global-set-key "\C-cl" 'org-store-link)
@@ -12,11 +12,21 @@
 
 ;; decent navigation like a good citizen
 (global-set-key (kbd "<C-tab>") 'persp-cycle-next)
-(global-set-key (kbd "<C-S-tab>") 'persp-cycle-prev)
+(global-set-key (kbd "<C-S-iso-lefttab>") 'persp-cycle-prev)
+(global-set-key (kbd "C-M-f") 'toggle-frame-fullscreen)
 
-;; dash
-(global-set-key "\C-cd" 'dash-at-point)
-(global-set-key "\C-ce" 'dash-at-point-with-docset)
+;; This i to bind Zoom in And Zoom Out with mouse, fuck yeah
+(global-set-key [C-mouse-4] 'text-scale-increase)
+(global-set-key [C-mouse-5] 'text-scale-decrease)
+
+
+;; Zeal-at-point
+(global-set-key "\C-cd" 'zeal-at-point)
+(global-set-key "\C-ce" 'zeal-at-point-with-docset)
+
+;; ;; dash
+;; (global-set-key "\C-cd" 'dash-at-point)
+;; (global-set-key "\C-ce" 'dash-at-point-with-docset)
 
 ;; other goodies
 (global-set-key (kbd "C-x C-y") 'kill-ring-ido)

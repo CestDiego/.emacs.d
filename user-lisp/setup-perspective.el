@@ -58,6 +58,11 @@
   (custom-persp "@Jabber" (connect-to-jabber)))
 (define-key persp-mode-map (kbd "C-x p j") 'custom-persp/jabber)
 
+(defun custom-persp/matlab ()
+  (interactive)
+  (custom-persp "MATLAB Shell" (matlab-shell)))
+(define-key persp-mode-map (kbd "C-x p m") 'custom-persp/matlab)
+
 (defun custom-persp/twitter ()
   (interactive)
   (custom-persp "@Twitter" (twit)))

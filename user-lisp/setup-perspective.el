@@ -63,6 +63,11 @@
   (custom-persp "MATLAB Shell" (matlab-shell)))
 (define-key persp-mode-map (kbd "C-x p m") 'custom-persp/matlab)
 
+(defun custom-persp/periodic ()
+  (interactive)
+  (custom-persp "Periodic Table" (eperiodic)))
+(define-key persp-mode-map (kbd "C-x p p") 'custom-persp/periodic)
+
 (defun custom-persp/twitter ()
   (interactive)
   (custom-persp "@Twitter" (twit)))

@@ -32,7 +32,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#0a0a0a" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#1e1e1e" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
  '(hl-line ((t (:inherit highlight :background "#1a1a1a"))))
  '(mode-line ((t (:background "#1a1a1a" :foreground "#8FB28F" :inverse-video nil :box nil))))
  '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))

@@ -34,6 +34,6 @@
  '(default ((t (:inherit nil :stipple nil :background "#0a0a0a" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
  '(hl-line ((t (:inherit highlight :background "#4f4f4f"))))
  '(mode-line ((t (:background "#1a1a1a" :foreground "#8FB28F" :inverse-video nil :box nil))))
- '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
- '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))
+ ;; '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
+ ;; '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))
  '(region ((t (:background "firebrick")))))

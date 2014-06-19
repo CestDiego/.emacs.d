@@ -132,6 +132,9 @@
      js2-refactor
      ac-js2
      skewer-mode
+
+     ;;Goodies
+     evil-numbers
      )))
 
 (condition-case nil

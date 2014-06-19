@@ -6,6 +6,10 @@
 
 (require 'evil-visualstar)
 
+;; Evil Numbers are evil
+(define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
+
 ;; these modes are clear from evil
 (add-hook 'term-mode-hook 'evil-emacs-state)
 (add-hook 'prodigy-mode-hook 'evil-emacs-state)

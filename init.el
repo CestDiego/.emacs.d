@@ -78,6 +78,8 @@
      itail
      prodigy
      restclient
+     deferred
+     xml-rpc
 
      ;; OSX
      erc-terminal-notifier
@@ -135,6 +137,7 @@
 
      ;;Goodies
      evil-numbers
+     ox-reveal
      )))
 
 (condition-case nil

@@ -4,7 +4,7 @@
                              :strike-through t))))
  '(org-headline-done
    ((((class color) (min-colors 16) (background dark))
-     (:foreground "LightSalmon" :strike-through t))))
+     (:foreground "LightSalmon" :strike-through t)))))
 
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)

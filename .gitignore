@@ -24,4 +24,5 @@ projectile-bookmarks.eld
 cider-history
 projectile.cache
 url
-custom.el
+/custom.fas
+/custom.lib

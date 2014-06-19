@@ -72,6 +72,7 @@
      expand-region
      diminish
      pretty-mode
+     org
      org-plus-contrib
      jabber
      twittering-mode

@@ -4,6 +4,8 @@ backups
 .places
 session.*
 tramp
+history
+org-clock*
 elpa
 swank
 emms
@@ -22,3 +24,4 @@ projectile-bookmarks.eld
 cider-history
 projectile.cache
 url
+custom.el

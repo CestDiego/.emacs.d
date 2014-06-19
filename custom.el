@@ -17,6 +17,7 @@
  '(magit-use-overlays nil)
  '(matlab-shell-command-switches (quote ("-nodesktop -nosplash")))
  '(mlint-programs (quote ("~/MATLAB/bin/glnxa64/mlint" "glnxa64/mlint")))
+ '(org-agenda-files (quote ("~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
@@ -31,9 +32,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#0a0a0a" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#1f1f1f" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
  '(hl-line ((t (:inherit highlight :background "#4f4f4f"))))
  '(mode-line ((t (:background "#1a1a1a" :foreground "#8FB28F" :inverse-video nil :box nil))))
- ;; '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
- ;; '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))
+ '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
+ '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))
  '(region ((t (:background "firebrick")))))

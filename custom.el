@@ -33,6 +33,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#1f1f1f" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 143 :width normal :foundry "unknown" :family "Anonymous Pro"))))
+ '(cfw:face-annotation ((t (:inherit cfw:face-day-title :foreground "saddle brown"))))
+ '(cfw:face-day-title ((t (:background "#2d2d2d"))))
+ '(cfw:face-holiday ((t (:background "#2d2d2d" :foreground "purple" :weight bold))))
+ '(cfw:face-saturday ((((class color) (background light)) (:background "#2d2d2d" :foreground "Blue" :weight bold)) (((class color) (background light)) (:foreground "Blue" :weight bold))))
+ '(cfw:face-sunday ((t (:background "#2d2d2d" :foreground "red" :weight bold))))
+ '(cfw:face-title ((t (:inherit variable-pitch :foreground "dark olive green" :weight bold :height 2.0))))
+ '(cfw:face-toolbar ((t (:background "#1f1f1f"))))
+ '(cfw:face-toolbar-button-off ((t (:foreground "gainsboro" :weight bold))))
  '(hl-line ((t (:inherit highlight :background "#4f4f4f"))))
  '(mode-line ((t (:background "#1a1a1a" :foreground "#8FB28F" :inverse-video nil :box nil))))
  '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))

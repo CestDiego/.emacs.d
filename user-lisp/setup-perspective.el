@@ -49,6 +49,11 @@
   (custom-persp "@IRC" (rcirc nil)))
 (define-key persp-mode-map (kbd "C-x p i") 'custom-persp/irc)
 
+(defun custom-persp/calfw()
+  (interactive)
+  (custom-persp "Calendar" (cfw:open-ical-calendar "https://www.google.com/calendar/ical/rmhn208r5foam7t129q9pbuo8g%40group.calendar.google.com/private-313974a16c0f9be18a26acb2d02853fa/basic.ics")))
+(define-key persp-mode-map (kbd "C-x p c") 'custom-persp/calfw)
+
 (defun connect-to-jabber ()
   (jabber-connect-all)
   (jabber-switch-to-roster-buffer))

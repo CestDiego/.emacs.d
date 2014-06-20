@@ -139,6 +139,7 @@
      ;;Goodies
      evil-numbers
      ox-reveal
+     calfw
      )))
 
 (condition-case nil

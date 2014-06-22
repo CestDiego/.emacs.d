@@ -140,6 +140,8 @@
      evil-numbers
      ox-reveal
      calfw
+     ;; skype
+     rainbow-mode
      )))
 
 (condition-case nil

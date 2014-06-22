@@ -2,7 +2,7 @@
 (require 'gnuplot-mode)
 
 ;; specify the gnuplot executable (if other than /usr/bin/gnuplot)
-(setq gnuplot-program "/usr/bin/gnuplot")
+(setq gnuplot-program "/usr/local/bin/gnuplot")
 
 ;; automatically open files ending with .gp or .gnuplot in gnuplot mode
 (setq auto-mode-alist

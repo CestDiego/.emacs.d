@@ -81,6 +81,7 @@
      restclient
      deferred
      xml-rpc
+     metaweblog
 
      ;; OSX
      erc-terminal-notifier

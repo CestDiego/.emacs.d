@@ -42,7 +42,9 @@
  'org-babel-load-languages
  '((python . t)))
 
+;; REVEAL MODE YEAHH!!
 (require 'ox-reveal)
-(setq  org-reveal-root "http://cdn.jsdelivr.net/reveal.js/2.5.0/")
+;; (setq  org-reveal-root "http://cdn.jsdelivr.net/reveal.js/2.5.0/")
+(setq org-reveal-root "file:///home/io/.emacs.d/site-misc/reveal.js")
 
 (provide 'setup-org-mode)

@@ -41,7 +41,7 @@
  '(cfw:face-title ((t (:inherit variable-pitch :foreground "dark olive green" :weight bold :height 2.0))))
  '(cfw:face-toolbar ((t (:background "#1f1f1f"))))
  '(cfw:face-toolbar-button-off ((t (:foreground "gainsboro" :weight bold))))
- '(hl-line ((t (:inherit highlight :background "#4f4f4f"))))
+ '(hl-line ((t (:inherit highlight :background "#4f4f4f"))) t)
  '(mode-line ((t (:background "#1a1a1a" :foreground "#8FB28F" :inverse-video nil :box nil))))
  '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
  '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))

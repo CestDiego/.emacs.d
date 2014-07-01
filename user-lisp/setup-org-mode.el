@@ -40,7 +40,7 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((python . t)))
+ '((python . t) (gnuplot . t)))
 
 ;; REVEAL MODE YEAHH!!
 (require 'ox-reveal)

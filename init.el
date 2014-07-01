@@ -122,6 +122,7 @@
      ;; HTML
      emmet-mode
      web-mode
+     less-css-mode
 
      ;; Python
      virtualenvwrapper

@@ -58,6 +58,7 @@
      magit
      git-gutter
      helm
+     helm-projectile
      helm-themes
      helm-c-yasnippet
      perspective

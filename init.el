@@ -119,6 +119,7 @@
       ac-math
       ebib
       gnuplot-mode
+      ac-ispell
     
      ;; HTML
      emmet-mode
@@ -143,7 +144,6 @@
      evil-numbers
      ox-reveal
      calfw
-     ;; skype
      rainbow-mode
      )))
 

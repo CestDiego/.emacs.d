@@ -1,6 +1,6 @@
 ;; brew install hunspell
 ;; download dictionaries from http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/
-;; copy them to ~/Library/Spelling/
+;; copy them to ~/.Library/Spelling/
 
 (setq ispell-program-name "hunspell")
 (setq ispell-dictionary "english")

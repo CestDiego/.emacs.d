@@ -3,6 +3,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-ispell-fuzzy-limit 4)
+ '(ac-ispell-requires 4)
  '(ansi-color-names-vector ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
@@ -17,7 +19,7 @@
  '(magit-use-overlays nil)
  '(matlab-shell-command-switches (quote ("-nodesktop -nosplash")))
  '(mlint-programs (quote ("~/MATLAB/bin/glnxa64/mlint" "glnxa64/mlint")))
- '(org-agenda-files (quote ("~/Documents/Org-Notes/Informe de Exoplanetas/Exoplanetas.org" "~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
+ '(org-agenda-files (quote ("~/Documents/Org-Notes/IntallingNotes.org" "~/Documents/Org-Notes/Informe de Exoplanetas/Exoplanetas.org" "~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
  '(org-latex-create-formula-image-program (quote imagemagick))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(vc-annotate-background "#2B2B2B")
@@ -25,7 +27,7 @@
  '(vc-annotate-very-old-color "#DC8CC3")
  '(weechat-color-list (quote (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
  '(rw-hunspell-default-dictionary "english")
- '(rw-hunspell-dicpath-list (quote ("~/Library/Spelling")))
+ '(rw-hunspell-dicpath-list (quote ("~/.Library/Spelling")))
  '(rw-hunspell-make-dictionary-menu t)
  '(rw-hunspell-use-rw-ispell t)
 (custom-set-faces

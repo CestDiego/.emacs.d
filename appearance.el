@@ -11,9 +11,9 @@
     (add-to-list 'custom-theme-load-path path)))
 
 (when (window-system)
-   (set-frame-font "Anonymous Pro")
-   (set-face-attribute 'default nil :family "Anonymous Pro" :height 140 :weight 'bold)
-   (set-face-font 'default "Anonymous Pro"))
+   (set-frame-font "Terminus")
+   (set-face-attribute 'default nil :family "Terminus" :height 140)
+   (set-face-font 'default "Terminus"))
 (load-theme 'zenburn)
 
 ;; Don't defer screen updates when performing operations

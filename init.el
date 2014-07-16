@@ -102,25 +102,26 @@
 
      ;; YAML
      yaml-mode
+     ansible
 
-      ;; Org Mode
-      o-blog
-      org2blog
- 
-      ;; Zeal (Dash Replacement for Linux)
-      zeal-at-point
- 
-      ;; MATLAB
-      matlab-mode
+     ;; Org Mode
+     o-blog
+     org2blog
+     
+     ;; Zeal (Dash Replacement for Linux)
+     zeal-at-point
+     
+     ;; MATLAB
+     matlab-mode
 
-      ;; LaTeX
-      auctex
-      latex-preview-pane
-      ac-math
-      ebib
-      gnuplot-mode
-      ac-ispell
-    
+     ;; LaTeX
+     auctex
+     latex-preview-pane
+     ac-math
+     ebib
+     gnuplot-mode
+     ac-ispell
+     
      ;; HTML
      emmet-mode
      web-mode
@@ -174,3 +175,5 @@
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)

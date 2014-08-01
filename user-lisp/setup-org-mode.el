@@ -21,6 +21,9 @@
 ;; TODO progress logging stuff
 (setq org-log-done 'time)
 
+;; Org-Bullets enabled by default!!
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;; Perspective is more important
 (add-hook 'org-mode-hook
           '(lambda ()

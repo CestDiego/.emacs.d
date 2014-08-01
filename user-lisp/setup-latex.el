@@ -35,7 +35,22 @@
 (add-hook 'LaTeX-mode-hook (lambda () (set-input-method "latin-1-prefix")))
 (add-hook 'LaTeX-mode-hook (lambda () (flyspell-mode 1)))
 
+;; KOMA Script Export
+(eval-after-load 'ox '(require 'ox-koma-letter))
+(eval-after-load 'ox-koma-letter
+  '(progn
+     (add-to-list 'org-latex-classes
+                  '("my-letter"
+                    "\\documentclass\{scrlttr2\}
+     \\usepackage[english]{babel}
+     \\setkomavar{frombank}{(1234)\\,567\\,890}
+     \[DEFAULT-PACKAGES]
+     \[PACKAGES]
+     \[EXTRA]"))
 
+     (setq org-koma-letter-default-class "my-letter")))
+(eval-after-load 'ox-latex
+  '(add-to-list 'org-latex-packages-alist '("AUTO" "babel" t) t))
 ;;;;;; YEAH EVINCE
 
 ; SyncTeX basics
@@ -61,7 +76,9 @@
 
 
 
-; SyncTeX backward search - based on http://emacswiki.org/emacs/AUCTeX#toc20, reproduced on http://tex.stackexchange.com/a/49840/21017
+; SyncTeX backward search - based on
+; http://emacswiki.org/emacs/AUCTeX#toc20, reproduced on
+; http://tex.stackexchange.com/a/49840/21017
 
 (defun th-evince-sync (file linecol &rest ignored)
   (let* ((fname (un-urlify file))

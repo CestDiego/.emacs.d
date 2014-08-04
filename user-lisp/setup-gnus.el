@@ -161,4 +161,6 @@
            ;; list all the subscribed groups even they contain zero un-read messages
            (lambda () (local-set-key "o" 'my-gnus-group-list-subscribed-groups ))
            )
+
+(setq compose-mail-user-agent-warnings nil)
 (provide 'setup-gnus)

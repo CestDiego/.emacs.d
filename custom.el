@@ -19,7 +19,7 @@
  '(magit-use-overlays nil)
  '(matlab-shell-command-switches (quote ("-nodesktop -nosplash")))
  '(mlint-programs (quote ("~/MATLAB/bin/glnxa64/mlint" "glnxa64/mlint")))
- '(org-agenda-files (quote ("~/Documents/Org-Notes/IntallingNotes.org" "~/Documents/Org-Notes/Informe de Exoplanetas/Exoplanetas.org" "~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
+ '(org-agenda-files (quote ("~/Documents/Org-Notes/IntallingNotes.org" "~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
  '(org-latex-create-formula-image-program (quote imagemagick))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(vc-annotate-background "#2B2B2B")

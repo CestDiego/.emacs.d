@@ -15,10 +15,14 @@
 (setq user-lisp-dir
       (expand-file-name "user-lisp" user-emacs-directory))
 
+(setq w3m-dir
+      (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
+
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
+(add-to-list 'load-path w3m-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -50,9 +54,6 @@
      yasnippet
      flx-ido
      ido-ubiquitous
-     evil
-     evil-visualstar
-     evil-surround				
      smartparens
      rainbow-delimiters
      magit
@@ -83,6 +84,11 @@
      deferred
      xml-rpc
      metaweblog
+
+     ;; Evil
+     evil
+     evil-visualstar
+     evil-surround				
 
      ;; OSX
      erc-terminal-notifier
@@ -143,6 +149,7 @@
 
      ;;Goodies
      evil-numbers
+     ace-jump-mode
      ox-reveal
      calfw
      rainbow-mode

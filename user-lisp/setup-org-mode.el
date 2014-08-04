@@ -50,4 +50,19 @@
 ;; (setq  org-reveal-root "http://cdn.jsdelivr.net/reveal.js/2.5.0/")
 (setq org-reveal-root "file:///home/io/.emacs.d/site-misc/reveal.js")
 
+
+;; Org MIME to Send HTML FUCKING MAILS!
+(require 'org-mime)
+
+(setq org-mime-library 'mml)
+;; The following key bindings are suggested, which bind the C-c M-o
+;; key sequence to the appropriate org-mime function in both email and
+;; Org-mode buffers.
+(add-hook 'message-mode-hook
+          (lambda ()
+            (local-set-key "\C-c\M-o" 'org-mime-htmlize)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key "\C-c\M-o" 'org-mime-org-buffer-htmlize)))
 (provide 'setup-org-mode)

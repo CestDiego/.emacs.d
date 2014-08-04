@@ -11,13 +11,16 @@
 (setq rcirc-time-format "%Y-%m-%d %H:%M ")
 
 ;; Change user info
-(setq rcirc-default-nick "ppold")
-(setq rcirc-default-user-name "ppold")
-(setq rcirc-default-full-name "Giorgio Leveroni")
+(setq rcirc-default-nick "cestdiego")
+(setq rcirc-default-user-name "cestdiego")
+(setq rcirc-default-full-name "Diego Berrocal")
 
 ;; Join these channels at startup.
 (setq rcirc-server-alist
-      '(("irc.freenode.net" :channels ("#limajs"))))
+      '(("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
+        ("irc.freenode.net" :port 6697 :encryption tls
+            :channels ("#limajs #emacs #rcirc"))))
+
 
 (defadvice rcirc (before rcirc-read-from-authinfo activate)
   "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.

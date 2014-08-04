@@ -1,3 +1,4 @@
+;;; Code:
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
 

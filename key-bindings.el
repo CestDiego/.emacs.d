@@ -34,6 +34,7 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c s") 'gist-region-or-buffer-private)
 (global-set-key (kbd "C-\\") 'er/expand-region)
+(global-set-key (kbd "C-x C-k C-j") 'dired-jump)
 
 ;; prevent madness
 (global-set-key (kbd "C-x 2") (lambda () (interactive)(split-window-vertically) (other-window 1)))

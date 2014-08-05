@@ -78,6 +78,11 @@
   (custom-persp "Periodic Table" (eperiodic)))
 (define-key persp-mode-map (kbd "C-x p p") 'custom-persp/periodic)
 
+(defun custom-persp/soundklaus ()
+  (interactive)
+  (custom-persp "SoundKlaus" (soundklaus-mode)))
+(define-key persp-mode-map (kbd "C-x p s") 'custom-persp/soundklaus)
+
 (defun custom-persp/twitter ()
   (interactive)
   (custom-persp "@Twitter" (twit)))

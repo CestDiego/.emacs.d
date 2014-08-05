@@ -26,25 +26,25 @@
 
 
 ;; Old school authinfo ;_;
-(setq rcirc-authinfo
-      '(("geekshed" nickserv "cestdiego" "GEEK056shed")
-        ("freenode" nickserv "cestdiego" "FREE056node")))
+;; (setq rcirc-authinfo
+;;       '(("geekshed" nickserv "cestdiego" "password")
+;;         ("freenode" nickserv "cestdiego" "password")))
 
-;; (defadvice rcirc (before rcirc-read-from-authinfo activate)
-;;   "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
-;; This doesn't support the chanserv auth method"
-;;   (unless arg
-;;     (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
-;;                                    :require '(:port :user :secret)))
-;;       (let ((secret (plist-get p :secret))
-;;             (method (intern (plist-get p :port))))
-;;         (add-to-list 'rcirc-authinfo
-;;                      (list (plist-get p :host)
-;;                            method
-;;                            (plist-get p :user)
-;;                            (if (functionp secret)
-;;                                (funcall secret)
-;;                              secret)))))))
+(defadvice rcirc (before rcirc-read-from-authinfo activate)
+  "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
+This doesn't support the chanserv auth method"
+  (unless arg
+    (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
+                                   :require '(:port :user :secret)))
+      (let ((secret (plist-get p :secret))
+            (method (intern (plist-get p :port))))
+        (add-to-list 'rcirc-authinfo
+                     (list (plist-get p :host)
+                           method
+                           (plist-get p :user)
+                           (if (functionp secret)
+                               (funcall secret)
+                             secret)))))))
 
 
 (defun rcirc-notify-send-popup (process sender response target text)

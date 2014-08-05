@@ -31,9 +31,13 @@
 
 
 ;; Zeal-at-point
-(global-set-key "\C-cd" 'zeal-at-point)
-(global-set-key "\C-ce" 'zeal-at-point-with-docset)
+(global-set-key "\C-cz" 'zeal-at-point)
+(global-set-key "\C-cZ" 'zeal-at-point-with-docset)
 
+(global-set-key (kbd "C-c e <down>") 'emms-start)
+(global-set-key (kbd "C-c e <up>") 'emms-stop)
+(global-set-key (kbd "C-c e <left>") 'emms-previous)
+(global-set-key (kbd "C-c e <right>") 'emms-next)
 ;; ;; dash
 ;; (global-set-key "\C-cd" 'dash-at-point)
 ;; (global-set-key "\C-ce" 'dash-at-point-with-docset)

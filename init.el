@@ -111,19 +111,24 @@
      slamhound
      midje-mode
 
-     ;; YAML
-     yaml-mode
-     ansible
-
      ;; Org Mode
      o-blog
      org2blog
      
+     ;; YAML
+     yaml-mode
+     ansible
+
      ;; Zeal (Dash Replacement for Linux)
      zeal-at-point
      
      ;; MATLAB
      matlab-mode
+     
+
+     ;; Multimedia Emacs
+     emms
+     soundklaus
 
      ;; LaTeX
      auctex
@@ -153,6 +158,7 @@
      skewer-mode
 
      ;;Goodies
+      
      evil-numbers
      ace-jump-mode
      ox-reveal

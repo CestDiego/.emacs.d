@@ -15,6 +15,7 @@
 (setq rcirc-default-user-name "cestdiego")
 (setq rcirc-default-full-name "Diego Berrocal")
 
+
 ;; Join these channels at startup.
 (setq rcirc-server-alist
       '(
@@ -24,21 +25,26 @@
             :channels ("#limajs #emacs #rcirc #haskell"))))
 
 
-(defadvice rcirc (before rcirc-read-from-authinfo activate)
-  "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
-This doesn't support the chanserv auth method"
-  (unless arg
-    (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
-                                   :require '(:port :user :secret)))
-      (let ((secret (plist-get p :secret))
-            (method (intern (plist-get p :port))))
-        (add-to-list 'rcirc-authinfo
-                     (list (plist-get p :host)
-                           method
-                           (plist-get p :user)
-                           (if (functionp secret)
-                               (funcall secret)
-                             secret)))))))
+;; Old school authinfo ;_;
+(setq rcirc-authinfo
+      '(("geekshed" nickserv "cestdiego" "GEEK056shed")
+        ("freenode" nickserv "cestdiego" "FREE056node")))
+
+;; (defadvice rcirc (before rcirc-read-from-authinfo activate)
+;;   "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
+;; This doesn't support the chanserv auth method"
+;;   (unless arg
+;;     (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
+;;                                    :require '(:port :user :secret)))
+;;       (let ((secret (plist-get p :secret))
+;;             (method (intern (plist-get p :port))))
+;;         (add-to-list 'rcirc-authinfo
+;;                      (list (plist-get p :host)
+;;                            method
+;;                            (plist-get p :user)
+;;                            (if (functionp secret)
+;;                                (funcall secret)
+;;                              secret)))))))
 
 
 (defun rcirc-notify-send-popup (process sender response target text)
@@ -152,7 +158,7 @@ This doesn't support the chanserv auth method"
                              ;; Keep input line at bottom.
                              (set (make-local-variable 'scroll-conservatively)
                                   8192)
-                             (rcirc-reconnect-mode 1)))
+                             (rcirc-reconnect-mode 1)) )
 
 (require 'erc-terminal-notifier)
 (defun rcirc-osx-notify (process sender response target text)

@@ -9,4 +9,5 @@
 (setq mc/cmds-to-run-once
       '(
         sp-backward-delete-char
+        sp-delete-char
         ))

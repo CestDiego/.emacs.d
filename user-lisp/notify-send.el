@@ -25,5 +25,6 @@ a sound to be played"
                               "~/.emacs.d/site-misc/startup.ogg"
                               )))
 
+
 ;; (notify-send-popup "Welcome to" "Emacs the great"
 ;;                    "/usr/share/app-install/icons/lostirc.png" "~/.emacs.d/site-misc/startup.ogg")

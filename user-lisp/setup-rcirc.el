@@ -5,7 +5,7 @@
 (setq rcirc-omit-responses '("JOIN" "PART" "QUIT" "NICK" "AWAY" "MODE"))
 
 ;; Adjust the colours of one of the faces.
-(set-face-foreground 'rcirc-my-nick "blue" nil)
+(set-face-foreground 'rcirc-my-nick "#b0e060" nil)
 
 ;; Include date in time stamp.
 (setq rcirc-time-format "%Y-%m-%d %H:%M ")
@@ -18,9 +18,10 @@
 ;; Join these channels at startup.
 (setq rcirc-server-alist
       '(
-        ("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
+        ("irc.geekshed.net" :port 6697 :encryption tls
+         :channels ("#jupiterbroadcasting"))
         ("irc.freenode.net" :port 6697 :encryption tls
-            :channels ("#limajs #emacs #rcirc"))))
+            :channels ("#limajs #emacs #rcirc #haskell"))))
 
 
 (defadvice rcirc (before rcirc-read-from-authinfo activate)
@@ -38,6 +39,17 @@ This doesn't support the chanserv auth method"
                            (if (functionp secret)
                                (funcall secret)
                              secret)))))))
+
+
+(defun rcirc-notify-send-popup (process sender response target text)
+  (let ((nick (rcirc-nick process)))
+    (when (and (string-match (regexp-quote nick) text)
+               (not (string= nick sender))
+               (not (string= (rcirc-server-name process) sender)))
+      (notify-send-popup sender text))))
+
+(add-hook 'rcirc-print-functions 'rcirc-notify-send-popup)
+
 
 ;;;; Auto reconnect
 ;;;; Taken from http://www.emacswiki.org/emacs/rcircReconnect

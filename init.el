@@ -89,6 +89,11 @@
      evil
      evil-visualstar
      evil-surround				
+     
+
+     ;; gnus
+     gnus
+     bbdb
 
      ;; OSX
      erc-terminal-notifier

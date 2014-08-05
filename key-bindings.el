@@ -20,6 +20,16 @@
 (global-set-key [C-mouse-5] 'text-scale-decrease)
 
 
+;; use windmove to navigate between windows easily
+(when (fboundp 'windmove-default-keybindings)
+  ;; (windmove-default-keybindings)
+  (global-set-key (kbd "s-k") 'windmove-right)
+  (global-set-key (kbd "s-u") 'windmove-up)
+  (global-set-key (kbd "s-h") 'windmove-left)
+  (global-set-key (kbd "s-j") 'windmove-down)
+  )
+
+
 ;; Zeal-at-point
 (global-set-key "\C-cd" 'zeal-at-point)
 (global-set-key "\C-ce" 'zeal-at-point-with-docset)
@@ -90,8 +100,5 @@
 (define-key sp-keymap (kbd "H-s j") 'sp-join-sexp)
 (define-key sp-keymap (kbd "H-s s") 'sp-split-sexp)
 
-;; use windmove to navigate between windows easily
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
 
 (provide 'key-bindings)

@@ -17,7 +17,8 @@
 
 ;; Join these channels at startup.
 (setq rcirc-server-alist
-      '(("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
+      '(
+        ("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
         ("irc.freenode.net" :port 6697 :encryption tls
             :channels ("#limajs #emacs #rcirc"))))
 

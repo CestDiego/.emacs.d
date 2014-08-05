@@ -63,6 +63,11 @@
   (custom-persp "@Jabber" (connect-to-jabber)))
 (define-key persp-mode-map (kbd "C-x p j") 'custom-persp/jabber)
 
+(defun custom-persp/gnus ()
+  (interactive)
+  (custom-persp "gnus" (gnus)))
+(define-key persp-mode-map (kbd "C-x p g") 'custom-persp/gnus)
+
 (defun custom-persp/matlab ()
   (interactive)
   (custom-persp "MATLAB Shell" (matlab-shell)))

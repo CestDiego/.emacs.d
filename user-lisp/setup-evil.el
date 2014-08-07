@@ -9,12 +9,13 @@
 (global-evil-leader-mode)
 (evil-mode 1)
 
+
 ;; Evil Numbers are evil
 (define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
 
 ;; Add Evil mode
-(global-set-key (kbd "C-s-;") 'ace-jump-word-mode)
+(global-set-key (kbd "C-M-;") 'ace-jump-word-mode)
 ;; (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 ;; (define-key evil-operator-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 
@@ -24,7 +25,7 @@
     (evil-leader/set-key
       "e" 'helm-find-files
       "b" 'helm-buffer-list)
-    (evil-leader-set-key
+    (evil-leader/set-key
      "e" 'find-file
      "b" 'switch-to-buffer))
 (if (featurep 'expand-region)

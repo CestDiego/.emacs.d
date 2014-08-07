@@ -78,9 +78,17 @@
   (custom-persp "Periodic Table" (eperiodic)))
 (define-key persp-mode-map (kbd "C-x p p") 'custom-persp/periodic)
 
+(defun setup-soundklaus ()
+  (dolist (p (auth-source-search :port "soundklaus"
+                                 :require '(:secret)))
+    (let ((token (plist-get p :secret)))
+      (setq soundklaus-access-token  (if (functionp token)
+                                         (funcall token)
+                                       token))))
+  (soundklaus-my-tracks))
 (defun custom-persp/soundklaus ()
   (interactive)
-  (custom-persp "SoundKlaus" (soundklaus-mode)))
+  (custom-persp "SoundKlaus" (setup-soundklaus)))
 (define-key persp-mode-map (kbd "C-x p s") 'custom-persp/soundklaus)
 
 (defun custom-persp/twitter ()

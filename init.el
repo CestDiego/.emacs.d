@@ -89,6 +89,8 @@
      evil
      evil-visualstar
      evil-surround				
+     evil-leader
+     evil-numbers
      
 
      ;; gnus
@@ -159,7 +161,6 @@
 
      ;;Goodies
       
-     evil-numbers
      ace-jump-mode
      ox-reveal
      calfw

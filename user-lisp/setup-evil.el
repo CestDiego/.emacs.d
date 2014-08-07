@@ -1,10 +1,12 @@
 (require 'evil)
-
+(require 'evil-leader)
 (require 'evil-surround)
+
 (global-evil-surround-mode 1)
 
 (require 'evil-visualstar)
 
+(global-evil-leader-mode)
 (evil-mode 1)
 
 ;; Evil Numbers are evil
@@ -13,9 +15,24 @@
 
 ;; Add Evil mode
 (global-set-key (kbd "C-s-;") 'ace-jump-word-mode)
-(define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
-(define-key evil-operator-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
+;; (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
+;; (define-key evil-operator-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 
+
+(evil-leader/set-leader "<SPC>")
+(if (featurep 'helm)
+    (evil-leader/set-key
+      "e" 'helm-find-files
+      "b" 'helm-buffer-list)
+    (evil-leader-set-key
+     "e" 'find-file
+     "b" 'switch-to-buffer))
+(if (featurep 'expand-region)
+    (progn
+      (setq expand-region-contract-fast-key "z")
+      (evil-leader/set-key "xx" 'er/expand-region)))
+(evil-leader/set-key
+  "k" 'kill-buffer)
 
 
 ;; these modes are clear from evil

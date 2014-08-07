@@ -22,7 +22,8 @@
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "v" 'visual-line-mode)
+  "v" 'visual-line-mode
+  "<SPC>" 'dired-jump)
 (if (featurep 'helm)
     (evil-leader/set-key
       "e" 'helm-find-files

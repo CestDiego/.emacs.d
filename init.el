@@ -146,6 +146,7 @@
      less-css-mode
 
      ;; Python
+     elpy
      virtualenvwrapper
      flycheck
      jedi

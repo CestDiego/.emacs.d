@@ -7,7 +7,6 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (package-initialize)
-(elpy-enable)
 
 (unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
   (package-refresh-contents))

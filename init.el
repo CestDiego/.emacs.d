@@ -18,11 +18,15 @@
 (setq w3m-dir
       (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
 
+(setq webkit-dir
+      (expand-file-name "site-list/webkit" user-emacs-directory))
+
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
 (add-to-list 'load-path w3m-dir)
+(add-to-list 'load-path webkit-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -85,6 +89,14 @@
      xml-rpc
      metaweblog
 
+     ;; Common Lisp
+     slime
+     ac-slime
+
+     ;; Elisp
+
+     elisp-slime-nav
+     
      ;; Evil
      evil
      evil-visualstar
@@ -92,6 +104,9 @@
      evil-leader
      evil-numbers
      
+     ;; MongoDB
+     inf-mongo
+     ob-mongo
 
      ;; gnus
      gnus
@@ -127,6 +142,9 @@
      ;; MATLAB
      matlab-mode
      
+     ;; Server
+     elnode
+     peek-mode
 
      ;; Multimedia Emacs
      emms
@@ -150,6 +168,7 @@
      virtualenvwrapper
      flycheck
      jedi
+     epc
 
      ;; Coffeescript
      coffee-mode

@@ -47,6 +47,7 @@
  '((python . t)
    (gnuplot . t)
    (C . t)
+   (mongo . t)
    (sh . t)))
 
 ;; REVEAL MODE YEAHH!!

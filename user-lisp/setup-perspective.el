@@ -46,7 +46,7 @@
 
 (defun custom-persp/irc ()
   (interactive)
-  (custom-persp "@IRC" (rcirc nil)))
+  (custom-persp "@IRC" (irc-cestdiego)))
 (define-key persp-mode-map (kbd "C-x p i") 'custom-persp/irc)
 
 (defun custom-persp/calfw()

@@ -28,3 +28,4 @@ url
 /custom.lib
 /.python-environments/
 /site-lisp/webkit/
+/eshell/

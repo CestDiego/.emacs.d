@@ -2,6 +2,46 @@
 ;; connect to two networks anyway.
 (require 'rcirc)
 
+
+(defun irc-cestdiego ()
+  "Connect to irc-proxy @brakemen"
+  (interactive)
+  (unless (memq 'secrets features)
+    (require 'secrets))
+  (setq rcirc-server-alist
+        '(("freenode.berrocal.me"
+           :nick "cestdiego"
+           :channels '("#limajs" "#emacs" "#haskell" )
+           :password (concat znc-user "/freenode:" znc-password ) )
+          ("geekshed.berrocal.me"
+           :nick "cestdiego"
+           :channels '("#jupiterbroadcasting")
+           :password (concat znc-user "/geekshed:" znc-password ) )))
+  (rcirc nil))
+
+;; Change user info
+(setq rcirc-default-nick "cestdiego")
+(setq rcirc-default-port 1984)
+(setq rcirc-default-user-name "cestdiego")
+(setq rcirc-default-full-name "Diego Berrocal")
+
+(defun rcirc-detach-buffer ()
+  (interactive)
+  (let ((buffer (current-buffer)))
+    (when (and (rcirc-buffer-process)
+             (eq (process-status (rcirc-buffer-process)) 'open))
+      (with-rcirc-server-buffer
+        (setq rcirc-buffer-alist
+              (rassq-delete-all buffer rcirc-buffer-alist)))
+      (rcirc-update-short-buffer-names)
+      (if (rcirc-channel-p rcirc-target)
+          (rcirc-send-string (rcirc-buffer-process)
+                             (concat "DETACH " rcirc-target))))
+    (setq rcirc-target nil)
+    (kill-buffer buffer)))
+
+(define-key rcirc-mode-map [(control c) (control d)] 'rcirc-detach-buffer)
+
 (setq rcirc-omit-responses '("JOIN" "PART" "QUIT" "NICK" "AWAY" "MODE"))
 
 ;; Adjust the colours of one of the faces.
@@ -10,19 +50,15 @@
 ;; Include date in time stamp.
 (setq rcirc-time-format "%Y-%m-%d %H:%M ")
 
-;; Change user info
-(setq rcirc-default-nick "cestdiego")
-(setq rcirc-default-user-name "cestdiego")
-(setq rcirc-default-full-name "Diego Berrocal")
 
 
 ;; Join these channels at startup.
-(setq rcirc-server-alist
-      '(
-        ("irc.geekshed.net" :port 6697 :encryption tls
-         :channels ("#jupiterbroadcasting"))
-        ("irc.freenode.net" :port 6697 :encryption tls
-            :channels ("#limajs #emacs #rcirc #haskell"))))
+;; (setq rcirc-server-alist
+;;       '(
+;;         ("irc.geekshed.net" :port 6697 :encryption tls
+;;          :channels ("#jupiterbroadcasting"))
+;;         ("irc.freenode.net" :port 6697 :encryption tls
+;;             :channels ("#limajs #emacs #rcirc #haskell"))))
 
 
 ;; Old school authinfo ;_;
@@ -30,21 +66,21 @@
 ;;       '(("geekshed" nickserv "cestdiego" "password")
 ;;         ("freenode" nickserv "cestdiego" "password")))
 
-(defadvice rcirc (before rcirc-read-from-authinfo activate)
-  "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
-This doesn't support the chanserv auth method"
-  (unless arg
-    (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
-                                   :require '(:port :user :secret)))
-      (let ((secret (plist-get p :secret))
-            (method (intern (plist-get p :port))))
-        (add-to-list 'rcirc-authinfo
-                     (list (plist-get p :host)
-                           method
-                           (plist-get p :user)
-                           (if (functionp secret)
-                               (funcall secret)
-                             secret)))))))
+;; (defadvice rcirc (before rcirc-read-from-authinfo activate)
+;;   "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
+;; This doesn't support the chanserv auth method"
+;;   (unless arg
+;;     (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
+;;                                    :require '(:port :user :secret)))
+;;       (let ((secret (plist-get p :secret))
+;;             (method (intern (plist-get p :port))))
+;;         (add-to-list 'rcirc-authinfo
+;;                      (list (plist-get p :host)
+;;                            method
+;;                            (plist-get p :user)
+;;                            (if (functionp secret)
+;;                                (funcall secret)
+;;                              secret)))))))
 
 
 (defun rcirc-notify-send-popup (process sender response target text)
@@ -59,30 +95,31 @@ This doesn't support the chanserv auth method"
 
 ;;;; Auto reconnect
 ;;;; Taken from http://www.emacswiki.org/emacs/rcircReconnect
-(defun-rcirc-command reconnect (arg)
-  "Reconnect the server process."
-  (interactive "i")
-  (if (buffer-live-p rcirc-server-buffer)
-      (with-current-buffer rcirc-server-buffer
-        (let ((reconnect-buffer (current-buffer))
-              (server (or rcirc-server rcirc-default-server))
-              (port (if (boundp 'rcirc-port) rcirc-port rcirc-default-port))
-              (nick (or rcirc-nick rcirc-default-nick))
-              channels)
-          (dolist (buf (buffer-list))
-            (with-current-buffer buf
-              (when (equal reconnect-buffer rcirc-server-buffer)
-                (remove-hook 'change-major-mode-hook
-                             'rcirc-change-major-mode-hook)
-                (let ((server-plist (cdr (assoc-string server rcirc-server-alist))))
-                  (when server-plist
-                    (setq channels (plist-get server-plist :channels))))
-                  )))
-          (if process (delete-process process))
-          (rcirc-connect server port nick
-                         nil
-                         nil
-                         channels)))))
+
+            (defun-rcirc-command reconnect (arg)
+              "Reconnect the server process."
+              (interactive "i")
+              (if (buffer-live-p rcirc-server-buffer)
+                  (with-current-buffer rcirc-server-buffer
+                    (let ((reconnect-buffer (current-buffer))
+                          (server (or rcirc-server rcirc-default-server))
+                          (port (if (boundp 'rcirc-port) rcirc-port rcirc-default-port))
+                          (nick (or rcirc-nick rcirc-default-nick))
+                          channels)
+                      (dolist (buf (buffer-list))
+                        (with-current-buffer buf
+                          (when (equal reconnect-buffer rcirc-server-buffer)
+                            (remove-hook 'change-major-mode-hook
+                                         'rcirc-change-major-mode-hook)
+                            (let ((server-plist (cdr (assoc-string server rcirc-server-alist))))
+                              (when server-plist
+                                (setq channels (plist-get server-plist :channels))))
+                            )))
+                      (if process (delete-process process))
+                      (rcirc-connect server port nick
+                                     nil
+                                     nil
+                                     channels)))))
 
 ;;; Attempt reconnection at increasing intervals when a connection is
 ;;; lost.
@@ -154,19 +191,11 @@ This doesn't support the chanserv auth method"
                              ;; Turn on spell checking.
                              (flyspell-mode 1)
                              (rcirc-omit-mode)
-                             (rcirc-track-minor-mode 1)
+                             (smartparens-mode)
+                             (setq current-input-method "latin-1-prefix")
                              ;; Keep input line at bottom.
                              (set (make-local-variable 'scroll-conservatively)
                                   8192)
                              (rcirc-reconnect-mode 1)) )
-
-(require 'erc-terminal-notifier)
-(defun rcirc-osx-notify (process sender response target text)
-  (let ((nick (rcirc-nick process)))
-    (when (and (string-match (regexp-quote nick) text)
-               (not (string= nick sender))
-               (not (string= (rcirc-server-name process) sender)))
-      (erc-terminal-notifier-notify sender text))))
-(add-hook 'rcirc-print-functions 'rcirc-osx-notify)
 
 (provide 'setup-rcirc)

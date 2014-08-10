@@ -1,29 +1,26 @@
 ;; You can autoload, but at the end of this block we'll
 ;; connect to two networks anyway.
 (require 'rcirc)
-
-
-(defun irc-cestdiego ()
-  "Connect to irc-proxy @brakemen"
-  (interactive)
-  (unless (memq 'secrets features)
-    (require 'secrets))
-  (setq rcirc-server-alist
-        '(("freenode.berrocal.me"
-           :nick "cestdiego"
-           :channels '("#limajs" "#emacs" "#haskell" )
-           :password (concat znc-user "/freenode:" znc-password ) )
-          ("geekshed.berrocal.me"
-           :nick "cestdiego"
-           :channels '("#jupiterbroadcasting")
-           :password (concat znc-user "/geekshed:" znc-password ) )))
-  (rcirc nil))
-
+(require 'secrets)
 ;; Change user info
 (setq rcirc-default-nick "cestdiego")
 (setq rcirc-default-port 1984)
 (setq rcirc-default-user-name "cestdiego")
 (setq rcirc-default-full-name "Diego Berrocal")
+
+;; (require 'secrets)
+;; (setq freenode-passwd (concat znc-user "/freenode:" znc-password ))
+;; (setq geekshed-passwd (concat znc-user "/geekshed:" znc-password ))
+;; (setq rcirc-server-alist
+;;       '(("freenode.berrocal.me"
+;;          :nick "cestdiego"
+;;          :channels '("#limajs" "#emacs" "#haskell" )
+;;          :password freenode-passwd )
+;;         ("geekshed.berrocal.me"
+;;          :nick "cestdiego"
+;;          :channels '("#jupiterbroadcasting")
+;;          :password geekshed-passwd ))
+
 
 (defun rcirc-detach-buffer ()
   (interactive)
@@ -35,7 +32,7 @@
               (rassq-delete-all buffer rcirc-buffer-alist)))
       (rcirc-update-short-buffer-names)
       (if (rcirc-channel-p rcirc-target)
-          (rcirc-send-string (rcirc-buffer-process)
+          (rcirc-send-strng (rcirc-buffer-process)
                              (concat "DETACH " rcirc-target))))
     (setq rcirc-target nil)
     (kill-buffer buffer)))
@@ -52,7 +49,7 @@
 
 
 
-;; Join these channels at startup.
+;; ;Join these channels at startup.
 ;; (setq rcirc-server-alist
 ;;       '(
 ;;         ("irc.geekshed.net" :port 6697 :encryption tls
@@ -61,7 +58,7 @@
 ;;             :channels ("#limajs #emacs #rcirc #haskell"))))
 
 
-;; Old school authinfo ;_;
+;; ;Old school authinfo ;_;
 ;; (setq rcirc-authinfo
 ;;       '(("geekshed" nickserv "cestdiego" "password")
 ;;         ("freenode" nickserv "cestdiego" "password")))

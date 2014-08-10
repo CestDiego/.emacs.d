@@ -142,9 +142,9 @@
      ;; MATLAB
      matlab-mode
      
-     ;; Server
-     elnode
-     peek-mode
+     ;; ;; Server
+     ;; elnode
+     ;; peek-mode
 
      ;; Multimedia Emacs
      emms

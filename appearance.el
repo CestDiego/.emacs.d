@@ -14,7 +14,8 @@
    (set-frame-font "Monaco")
    (set-face-attribute 'default nil :family "Monaco" :height 120)
    (set-face-font 'default "Monaco"))
-(load-theme 'zenburn)
+
+(load-theme 'hc-zenburn)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

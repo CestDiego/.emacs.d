@@ -1,3 +1,0 @@
-[submodule "site-lisp/vagrant-tramp"]
-	path = site-lisp/vagrant-tramp
-	url = https://github.com/dougm/vagrant-tramp.git

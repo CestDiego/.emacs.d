@@ -50,6 +50,10 @@
 (global-set-key (kbd "C-\\") 'er/expand-region)
 (global-set-key (kbd "C-x C-k C-j") 'dired-jump)
 
+
+(global-set-key (kbd "<C-M-return>") 'rcirc-next-active-buffer)
+
+
 ;; prevent madness
 (global-set-key (kbd "C-x 2") (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (global-set-key (kbd "C-x 3") (lambda () (interactive)(split-window-horizontally) (other-window 1)))

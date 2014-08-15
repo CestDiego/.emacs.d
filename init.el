@@ -94,7 +94,7 @@
      ac-slime
 
      ;; Elisp
-
+     dash 
      elisp-slime-nav
      
      ;; Evil
@@ -185,6 +185,12 @@
      ox-reveal
      calfw
      rainbow-mode
+     spray ;; Speed-reading
+
+     ;; Themming
+     smart-mode-line
+     hc-zenburn-theme
+     moe-theme
      )))
 
 (condition-case nil

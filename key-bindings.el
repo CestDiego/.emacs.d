@@ -29,6 +29,16 @@
   (global-set-key (kbd "s-j") 'windmove-down)
   )
 
+;; Increase Height and Width of Windows
+(global-set-key (kbd "C->")
+                'increase-window-height)
+(global-set-key (kbd "C-<")
+                'decrease-window-height)
+(global-set-key (kbd "s-,")
+                'decrease-window-width)
+(global-set-key (kbd "s-.")
+                'increase-window-width)
+
 
 ;; Zeal-at-point
 (global-set-key "\C-cz" 'zeal-at-point)

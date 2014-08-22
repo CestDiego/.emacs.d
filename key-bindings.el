@@ -40,6 +40,15 @@
                 'increase-window-width)
 
 
+;; Nicer scrolling with mouse wheel/trackpad.
+(unless (and (boundp 'mac-mouse-wheel-smooth-scroll) mac-mouse-wheel-smooth-scroll)
+  (global-set-key [wheel-down] (lambda () (interactive) (scroll-up-command 1)))
+  (global-set-key [wheel-up] (lambda () (interactive) (scroll-down-command 1)))
+  (global-set-key [double-wheel-down] (lambda () (interactive) (scroll-up-command 2)))
+  (global-set-key [double-wheel-up] (lambda () (interactive) (scroll-down-command 2)))
+  (global-set-key [triple-wheel-down] (lambda () (interactive) (scroll-up-command 4)))
+  (global-set-key [triple-wheel-up] (lambda () (interactive) (scroll-down-command 4))))
+
 ;; Zeal-at-point
 (global-set-key "\C-cz" 'zeal-at-point)
 (global-set-key "\C-cZ" 'zeal-at-point-with-docset)

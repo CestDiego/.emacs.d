@@ -188,8 +188,8 @@
                              ;; Turn on spell checking.
                              (flyspell-mode 1)
                              (rcirc-omit-mode)
-                             (smartparens-mode)
-                             (setq current-input-method "latin-1-prefix")
+                             (smartparens-mode 0)
+                             (set-input-method "latin-1-prefix")
                              ;; Keep input line at bottom.
                              (set (make-local-variable 'scroll-conservatively)
                                   8192)

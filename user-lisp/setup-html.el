@@ -29,4 +29,7 @@
   (add-hook 'scss-mode-hook 'rainbow-mode)
   )
 
+(require 'grunt)
+(add-hook 'web-mode-hook (lambda () (local-set-key (kbd "C-M-g") 'grunt-exec)))
+
 (provide 'setup-html)

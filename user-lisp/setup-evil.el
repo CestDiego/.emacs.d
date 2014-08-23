@@ -19,6 +19,7 @@
 ;; (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 ;; (define-key evil-operator-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 
+;; All EVIL needs a LEADER
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
@@ -38,10 +39,11 @@
 (evil-leader/set-key
   "k" 'kill-buffer)
 
-
 ;; these modes are clear from evil
 (add-hook 'term-mode-hook 'evil-emacs-state)
 (add-hook 'prodigy-mode-hook 'evil-emacs-state)
 (add-hook 'cider-repl-mode-hook 'evil-emacs-state)
+
+(add-hook 'rcirc-mode-hook 'evil-insert-state)
 
 (provide 'setup-evil)

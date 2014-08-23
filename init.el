@@ -161,6 +161,7 @@
      ;; HTML
      emmet-mode
      web-mode
+     grunt
      less-css-mode
 
      ;; Python

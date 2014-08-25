@@ -104,6 +104,10 @@
      evil-leader
      evil-numbers
      
+     ;; Haskell
+     haskell-mode
+     hi2
+     
      ;; MongoDB
      inf-mongo
      ob-mongo
@@ -138,6 +142,7 @@
 
      ;; Zeal (Dash Replacement for Linux)
      zeal-at-point
+     helm-dash
      
      ;; MATLAB
      matlab-mode
@@ -170,6 +175,9 @@
      flycheck
      jedi
      epc
+     
+     ;; Lua
+     lua-mode
 
      ;; Coffeescript
      coffee-mode

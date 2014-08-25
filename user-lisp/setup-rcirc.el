@@ -1,7 +1,7 @@
 ;; You can autoload, but at the end of this block we'll
 ;; connect to two networks anyway.
 (require 'rcirc)
-(require 'secrets)
+(require 'epa-file)
 ;; Change user info
 (setq rcirc-default-nick "cestdiego")
 (setq rcirc-default-port 1984)

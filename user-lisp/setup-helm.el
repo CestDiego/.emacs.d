@@ -21,4 +21,12 @@
       helm-c-source-buffer-not-found))     ;; ask to create a buffer otherwise
    "*all-seeing-eye*"))
 
+
+;; Using Helm-Dash to not to use Zeal-At-Point
+
+
+(add-hook 'javascript-mode-hook (lambda () (setq-local helm-dash-docsets '("JavaScript"
+                                                                      "BackboneJS"))))
+(add-hook 'python-mode-hook (lambda () (setq-local helm-dash-docsets '("Python_2"))))
+
 (provide 'setup-helm)

@@ -171,7 +171,6 @@
 
      ;; Python
      elpy
-     virtualenvwrapper
      flycheck
      jedi
      epc

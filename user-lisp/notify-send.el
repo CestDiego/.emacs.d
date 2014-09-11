@@ -18,6 +18,12 @@ a sound to be played"
 ;; Display Emacs Startup Time
 (add-hook 'after-init-hook (lambda ()
                              (notify-send-popup
+                              "Happy Hacking!!!"
+                              "Welcome to HackSpace, BITCH!"
+                              "~/.emacs.d/site-misc/hack.png"
+                              "~/.emacs.d/site-misc/startup.ogg"
+                              )
+                             (notify-send-popup
                               "Emacs Startup"
                               (format "The init sequence took %s."
                                (emacs-init-time))

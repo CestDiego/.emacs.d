@@ -139,6 +139,7 @@
      ;; YAML
      yaml-mode
      ansible
+     ansible-doc
 
      ;; Zeal (Dash Replacement for Linux)
      zeal-at-point

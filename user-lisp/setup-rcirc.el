@@ -48,6 +48,7 @@
 (setq rcirc-time-format "%Y-%m-%d %H:%M ")
 
 
+;; OLD SCHOOL RCICI
 
 ;; ;Join these channels at startup.
 ;; (setq rcirc-server-alist
@@ -79,6 +80,7 @@
 ;;                                (funcall secret)
 ;;                              secret)))))))
 
+; ----------------- END ------------------
 
 (defun rcirc-notify-send-popup (process sender response target text)
   (let ((nick (rcirc-nick process)))

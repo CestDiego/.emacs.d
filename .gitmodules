@@ -1,3 +1,7 @@
 [submodule "site-lisp/org-panes"]
 	path = site-lisp/org-panes
 	url = https://github.com/knupfer/org-panes
+
+[submodule "site-misc/reveal.js"]
+	path = site-misc/reveal.js
+	url = https://github.com/hakimel/reveal.js/

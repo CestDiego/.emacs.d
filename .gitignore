@@ -8,7 +8,6 @@ history
 org-clock*
 elpa
 swank
-emms
 site-lisp/adventur-mode
 *.elc
 *.el~

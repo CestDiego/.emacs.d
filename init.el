@@ -123,7 +123,6 @@
      ;; Clojure
      cider
      ac-cider
-     cider-tracing
      clj-refactor
      clojure-cheatsheet
      clojure-snippets

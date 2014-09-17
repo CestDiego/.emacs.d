@@ -1,7 +1,7 @@
 (require 'cider)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(setq nrepl-hide-special-buffers t)
+(setq nrepl-hide-special-buffers) t
 (setq cider-repl-pop-to-buffer-on-connect nil)
 (setq cider-popup-stacktraces nil)
 (setq cider-repl-popup-stacktraces t)
@@ -40,7 +40,7 @@
 (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (eval-after-load "cider"
-  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc))
 
 (define-clojure-indent
   (fact 'defun)

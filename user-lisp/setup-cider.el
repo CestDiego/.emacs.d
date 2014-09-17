@@ -25,11 +25,12 @@
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
 
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 (eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
+  '(add-to-list 'ac-modes 'cider-mode))
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))

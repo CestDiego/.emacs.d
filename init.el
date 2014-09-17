@@ -121,8 +121,8 @@
      dash-at-point
 
      ;; Clojure
-     ac-nrepl
      cider
+     ac-cider
      cider-tracing
      clj-refactor
      clojure-cheatsheet

@@ -6,7 +6,6 @@ if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"
     sleep 0.2
     echo "Proceding...."
-
 else
     echo "Adding emacs ppa from cassou"
     sudo add-apt-repository ppa:cassou/emacs -y
@@ -17,7 +16,7 @@ else
 fi
 
 echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-if [ -d "~/.emacs.d" ]; then
+if [ -d "$HOME/.emacs.d" ]; then
     mv ~/.emacs.d{,.old}
 fi
 
@@ -52,7 +51,10 @@ then
 fi
 
 echo "Setting up the ecn for the emacsclient"
+
 sudo cp ~/.emacs.d/initial-scripts/ecn /usr/local/bin/ecn
+
+
 echo "#######################################################################"
 echo "     /  /\         /__/\         /  /\         /  /\         /  /\   "
 echo "    /  /:/_       |  |::\       /  /::\       /  /:/        /  /:/_   "

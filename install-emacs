@@ -1,8 +1,6 @@
 #!/bin/bash
-hash git >/dev/null 2>&1 && env git clone --recursive https://github.com/CestDiego/.emacs.d.git ~/.emacs.d || {
-  echo "git not installed"
-  exit
-}
+
+git clone --recursive https://github.com/CestDiego/.emacs.d.git ~/.emacs.d
 
 if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"

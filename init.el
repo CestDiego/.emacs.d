@@ -26,7 +26,7 @@
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
 (add-to-list 'load-path w3m-dir)
-(add-tO-list 'load-path webkit-dir)
+(add-to-list 'load-path webkit-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

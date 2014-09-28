@@ -39,24 +39,33 @@ echo "Installing Python Pip and Flake 8"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
 echo "Setting up Aliases for emacs"
-if [[$SHELL = '/bin/bash']];
+if [$SHELL = '/bin/bash'];
 then
     echo 'alias ec= "emacsclient -n"' >> ~/.bashrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.bashrc
     echo 'alias ect= "emacsclient -t"' >> ~/.bashrc
-elif [[$SHELL = '/bin/zsh']];
+elif [$SHELL = '/bin/zsh'];
 then
     echo 'alias ec= "emacsclient -n"' >> ~/.zshrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.zshrc
     echo 'alias ect= "emacsclient -t"' >> ~/.zshrc
 fi
 
-echo "\033[0;32m"'         __                                     __   '"\033[0m"
-echo "\033[0;32m"'  ____  / /_     ____ ___  __  __   ____  _____/ /_  '"\033[0m"
-echo "\033[0;32m"' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '"\033[0m"
-echo "\033[0;32m"'/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '"\033[0m"
-echo "\033[0;32m"'\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '"\033[0m"
-echo "\033[0;32m"'                        /____/                       ....is now installed!'"\033[0m"
-echo "\n\n \033[0;32mPlease look over the ~/.zshrc file to select plugins, themes, and options.\033[0m"
-echo "\n\n \033[0;32mp.s. Follow us at http://twitter.com/ohmyzsh.\033[0m"
-echo "\n\n \033[0;32mp.p.s. Get stickers and t-shirts at http://shop.planetargon.com.\033[0m"
+echo "Setting up the ecn for the emacsclient"
+sudo cp ~/.emacs.d/initial-scripts/ecn /usr/local/bin/ecn
+echo "#######################################################################"
+echo "     /  /\         /__/\         /  /\         /  /\         /  /\   "
+echo "    /  /:/_       |  |::\       /  /::\       /  /:/        /  /:/_   "
+echo "   /  /:/ /\      |  |:|:\     /  /:/\:\     /  /:/        /  /:/ /\  "
+echo "  /  /:/ /:/_   __|__|:|\:\   /  /:/~/::\   /  /:/  ___   /  /:/ /::\ "
+echo " /__/:/ /:/ /\ /__/::::| \:\ /__/:/ /:/\:\ /__/:/  /  /\ /__/:/ /:/\:\ "
+echo " \  \:\/:/ /:/ \  \:\~~\__\/ \  \:\/:/__\/ \  \:\ /  /:/ \  \:\/:/~/:/ "
+echo "  \  \::/ /:/   \  \:\        \  \::/       \  \:\  /:/   \  \::/ /:/ "
+echo "   \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \__\/ /:/  "
+echo "    \  \::/       \  \:\        \  \:\        \  \::/        /__/:/   "
+echo "     \__\/         \__\/         \__\/         \__\/         \__\/    "
+echo "#######################################################################"
+echo " "
+echo "Thanks for trying Hackspace Emacs Configuration, got to github.com/cestdiego/.emacs.d"
+echo "for details or just see the README.org (obviously with your freshly installed emacs)"
+echo "Just do a M-x find-file RET ~/.emacs.d/README.org RET"

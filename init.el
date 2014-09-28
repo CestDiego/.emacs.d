@@ -62,26 +62,17 @@
      rainbow-delimiters
      magit
      git-gutter
-     helm
-     helm-projectile
-     helm-themes
-     helm-c-yasnippet
      perspective
      projectile
      multi-term
      exec-path-from-shell
      whitespace-cleanup-mode
      saveplace
-     vagrant
      browse-kill-ring
      guide-key
      expand-region
      diminish
      pretty-mode
-     org
-     org-plus-contrib
-     jabber
-     twittering-mode
      itail
      prodigy
      restclient
@@ -108,13 +99,19 @@
      haskell-mode
      hi2
      
+     ;; Helm
+     helm
+     helm-projectile
+     helm-themes
+     helm-c-yasnippet
+
      ;; MongoDB
      inf-mongo
      ob-mongo
 
      ;; gnus
-     gnus
-     bbdb
+     ;; gnus
+     ;; bbdb
 
      ;; OSX
      erc-terminal-notifier
@@ -132,6 +129,8 @@
      midje-mode
 
      ;; Org Mode
+     org
+     org-plus-contrib
      o-blog
      org2blog
      
@@ -141,19 +140,15 @@
      ansible-doc
 
      ;; Zeal (Dash Replacement for Linux)
-     zeal-at-point
+     ;; zeal-at-point
      helm-dash
      
      ;; MATLAB
-     matlab-mode
+     ;; matlab-mode
      
      ;; ;; Server
      ;; elnode
      ;; peek-mode
-
-     ;; Multimedia Emacs
-     emms
-     soundklaus
 
      ;; LaTeX
      auctex
@@ -166,8 +161,9 @@
      ;; HTML
      emmet-mode
      web-mode
-     grunt
      less-css-mode
+     rainbow-mode
+     htmlize
 
      ;; Python
      elpy
@@ -192,13 +188,13 @@
      ace-jump-mode
      ox-reveal
      calfw
-     rainbow-mode
      spray ;; Speed-reading
+
+     ;; jabber
+     ;; twittering-mode
 
      ;; Themming
      smart-mode-line
-     hc-zenburn-theme
-     moe-theme
      )))
 
 (condition-case nil

@@ -2,11 +2,10 @@
 
 echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
 
-if [ -d "$HOME/.emacs.d" ]; then
-    mv ~/.emacs.d{,.old}
-fi
+mv ~/.emacs.d{,.old}
 
 echo "\n cloning ... \n"
+
 git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 
 if [ -z "$(pgrep emacs)" ] ; then

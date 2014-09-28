@@ -1,11 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 echo "DISCLAIMER: THIS WILL ONLY WORK ON UBUNTU 14.04"
 sleep 3
 
 
-echo "Cheking if You Have emacs ppa installed"
-if [ -f " /etc/apt/sources.list.d/cassou-emacs-trusty.list" ] ; then
-    sleep 0.5
+if [ -z "$(pgrep emacs)" ] ; then
+    echo "Your emacs installation is valid"
+    sleep 0.2
+    echo "Proceding...."
 
 else
     echo "Adding emacs ppa from cassou"

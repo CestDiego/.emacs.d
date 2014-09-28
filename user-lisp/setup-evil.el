@@ -20,7 +20,6 @@
 ;; (define-key evil-operator-state-map (kbd "SPC") #'evil-ace-jump-word-mode)
 
 ;; All EVIL needs a LEADER
-
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "v" 'visual-line-mode

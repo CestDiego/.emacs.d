@@ -30,6 +30,6 @@
   )
 
 (require 'grunt)
-(add-hook 'web-mode-hook (lambda () (local-set-key (kbd "C-M-g") 'grunt-exec)))
+(add-hook 'web-ode-hook (lambda () (local-set-key (kbd "C-M-g") 'grunt-exec)))
 
 (provide 'setup-html)

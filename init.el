@@ -19,7 +19,7 @@
       (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
 
 (setq webkit-dir
-      (expand-file-name "site-list/webkit" user-emacs-directory))
+      (expand-file-name "site-lisp/webkit" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
@@ -164,6 +164,7 @@
      less-css-mode
      rainbow-mode
      htmlize
+     grunt
 
      ;; Python
      elpy

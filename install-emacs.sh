@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "DISCLAIMER: THIS WILL ONLY WORK ON UBUNTU 14.04"
 sleep 5
 
@@ -33,14 +33,15 @@ emacs &
 echo "Installing Python Pip and Flake 8"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
-
 echo "Setting up Aliases for emacs"
 if [[$SHELL = '/bin/bash']];
-    then
+then
     echo 'alias ec= "emacsclient -n"' >> ~/.bashrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.bashrc
     echo 'alias ect= "emacsclient -t"' >> ~/.bashrc
-    else
+elif [[$SHELL = '/bin/zsh']];
+then
     echo 'alias ec= "emacsclient -n"' >> ~/.zshrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.zshrc
     echo 'alias ect= "emacsclient -t"' >> ~/.zshrc
+fi

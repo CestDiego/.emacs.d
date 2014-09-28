@@ -4,13 +4,6 @@
 #+STARTUP:	content
 #+STARTUP:      indent
 
-: M-x el-get-install RET org-tree-slide
-=Things= inline
-
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "<f8>") 'org-tree-slide-mode)
-(global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
-#+END_SRC
 * 1. What's this?
 
 The main use of this .emacs.d configuration is to give users of the HackSpace community a quick intro to the emacs editor, and also to provide a flexible but solid foundation on how to customize what will be their own .emacs.d

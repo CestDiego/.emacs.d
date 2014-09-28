@@ -1,6 +1,11 @@
 #!/bin/bash
 
-git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
+echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
+if [ -d "$HOME/.emacs.d" ]; then
+    mv ~/.emacs.d{,.old}
+else
+    git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
+fi
 
 if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"
@@ -15,10 +20,6 @@ else
     sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg -y
 fi
 
-echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-if [ -d "$HOME/.emacs.d" ]; then
-    mv ~/.emacs.d{,.old}
-fi
 
 echo "Installing Monaco Font"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash

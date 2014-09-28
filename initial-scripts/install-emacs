@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --recursive https://github.com/CestDiego/.emacs.d.git ~/.emacs.d
+git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 
 if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"

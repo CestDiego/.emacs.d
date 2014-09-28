@@ -1,7 +1,8 @@
 #!/bin/bash
-echo "DISCLAIMER: THIS WILL ONLY WORK ON UBUNTU 14.04"
-sleep 3
-
+hash git >/dev/null 2>&1 && env git clone --recursive https://github.com/CestDiego/.emacs.d.git ~/.emacs.d || {
+  echo "git not installed"
+  exit
+}
 
 if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"
@@ -17,8 +18,10 @@ else
     sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg -y
 fi
 
-echo "Installing curl"
-sudo apt-get install curl -y
+echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
+if [ -d "~/.emacs.d" ]; then
+    mv ~/.emacs.d{,.old}
+fi
 
 echo "Installing Monaco Font"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
@@ -49,3 +52,13 @@ then
     echo 'alias ecn= "emacsclient -c"' >> ~/.zshrc
     echo 'alias ect= "emacsclient -t"' >> ~/.zshrc
 fi
+
+echo "\033[0;32m"'         __                                     __   '"\033[0m"
+echo "\033[0;32m"'  ____  / /_     ____ ___  __  __   ____  _____/ /_  '"\033[0m"
+echo "\033[0;32m"' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '"\033[0m"
+echo "\033[0;32m"'/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '"\033[0m"
+echo "\033[0;32m"'\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '"\033[0m"
+echo "\033[0;32m"'                        /____/                       ....is now installed!'"\033[0m"
+echo "\n\n \033[0;32mPlease look over the ~/.zshrc file to select plugins, themes, and options.\033[0m"
+echo "\n\n \033[0;32mp.s. Follow us at http://twitter.com/ohmyzsh.\033[0m"
+echo "\n\n \033[0;32mp.p.s. Get stickers and t-shirts at http://shop.planetargon.com.\033[0m"

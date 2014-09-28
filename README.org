@@ -1,4 +1,3 @@
-#+TITLE:	README for Org Tree Slide
 #+AUTHOR:	Diego Berrocal
 #+EMAIL:	cestdiego@gmail.com
 #+STARTUP:	content
@@ -28,8 +27,52 @@ The main use of this .emacs.d configuration is to give users of the HackSpace co
 * 2. Install
 ** Automated install
 #+begin_src sh
-mv ~/.emacs.d{,.old}
-git clone --recursive git@github.com:CestDiego/.emacs.d ~/.emacs.d
-cd ~/.emacs.d
 ./install-emacs
 #+end_src
+
+* 3. Recommended settings
+
+* 4. Profiles
+* 5. User variables
+
+|----+-------------------------------------+---------------+---------|
+|    | Variable                            | Default value | Select  |
+|----+-------------------------------------+---------------+---------|
+|  1 | org-tree-slide-skip-outline-level   | 0             | Numeric |
+|  2 | org-tree-slide-header               | t             | Boolean |
+|  3 | org-tree-slide-slide-in-effect      | t             | Boolean |
+|  4 | org-tree-slide-slide-in-brank-lines | 10            | Numeric |
+|  5 | org-tree-slide-slide-in-waiting     | 0.02          | Float   |
+|  6 | org-tree-slide-cursor-init          | t             | Boolean |
+|  7 | org-tree-slide-heading-emphasis     | nil           | Boolean |
+|  8 | org-tree-slide-skip-done            | nil           | Boolean |
+|  9 | org-tree-slide-modeline-display     | 'outside      | [*1]    |
+| 10 | org-tree-slide-skip-comments        | t             | Boolean |
+| 11 | org-tree-slide-activate-message     | Hello...      | String  |
+| 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
+
+#+BEGIN_QUOTE
+[*1] { nil| 'lighter | 'outside }
+  'outside: shown in the mode line outside of lighter
+  'lighter: shown in lighter (slow)
+       nil: nothing to be shown"
+#+END_QUOTE
+
+
+* 6. Functions
+
+** Control functions
+
+** Startup options
+
+** Toggle variables
+
+** Hooks
+
+  - org-tree-slide-mode-play-hook
+  - org-tree-slide-mode-stop-hook
+
+* 8. Contact
+
+The author is Diego BERROCAL (cestdiego@gmail.com).
+Feel free to email me or use a mention of twitter ([[https://twitter.com/#!/takaxp][@diegor1901]])

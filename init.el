@@ -52,7 +52,14 @@
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   '(dired-details
+   '(
+     ;; Org Mode
+     org
+     org-plus-contrib
+     o-blog
+     org2blog
+
+     dired-details
      auto-complete
      gist
      yasnippet
@@ -128,11 +135,6 @@
      slamhound
      midje-mode
 
-     ;; Org Mode
-     org
-     org-plus-contrib
-     o-blog
-     org2blog
      
      ;; YAML
      yaml-mode

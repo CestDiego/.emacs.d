@@ -53,10 +53,10 @@
 ;; REVEAL MODE YEAHH!!
 (require 'ox-reveal)
 ;; (setq  org-reveal-root "http://cdn.jsdelivr.net/reveal.js/2.5.0/")
-(setq org-reveal-root "file:///home/io/.emacs.d/site-misc/reveal.js")
+(setq org-reveal-root "file://~/.emacs.d/site-misc/reveal.js")
 
 
-;; Org MIME to Send HTML FUCKING MAILS!
+;; Org MIME to Send HTML MAILS!
 (require 'org-mime)
 
 (setq org-mime-library 'mml)

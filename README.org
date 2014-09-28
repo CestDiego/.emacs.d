@@ -2,6 +2,7 @@
 #+AUTHOR:	Diego Berrocal
 #+EMAIL:	cestdiego@gmail.com
 #+STARTUP:	content
+#+STARTUP:      indent
 
 : M-x el-get-install RET org-tree-slide
 =Things= inline
@@ -12,21 +13,25 @@
 #+END_SRC
 * 1. What's this?
 
-The main use of this .emacs.d configuration is to give
-Main features:
+The main use of this .emacs.d configuration is to give users of the HackSpace community a quick intro to the emacs editor, and also to provide a flexible but solid foundation on how to customize what will be their own .emacs.d
 
-  - Live editable presentation
-  - Fast switching of narrowing/widen
-  - TODO pursuit with narrowing
-  - Displaying the current number of slides
-  - Countdown timer
-  - CONTENT view during a presentation
-  - Slide-in effect
-  - Slide header from org file's header
+** Main features:
+- EVIL mode by default in many modes
+- Clojure development support
+- Org Export to Reveal.js for Awesome Presentations
+- =Org2blog= for exporting directly to your wordpress site
+- =Magit= for using git inside emacs
+- (what we think of) Better defaults
+- Latex support with latex-pane-editor for quick editing
+- Python IDE implementation with Elpy and Jedi as backend
+- HTML/CSS/JS Support with Web-Mode and js2
+- Basic Haskell support (you guys can improve on this)
+- MongoDB Inferior Mode for MongoDB interactions
+- RCIRC for IRC chat with .authinfo.gpg backend
+- Smart Mode Line as the Modeline Frontend (customizable too)
+- TRAMP support out of the box
+- AutoComplete for Ispell and some major languages (pytho,haskell,C, etc)
 
-** 1-1. Related packages
-
-see [[http://orgmode.org/worg/org-tutorials/non-beamer-presentations.html]].
 
 * 2. Install
 

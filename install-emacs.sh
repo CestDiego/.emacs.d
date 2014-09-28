@@ -17,7 +17,7 @@ else
 fi
 
 echo "Installing curl"
-sudo apt-get install curl
+sudo apt-get install curl -y
 
 echo "Installing Monaco Font"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash

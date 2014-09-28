@@ -1,11 +1,13 @@
 #!/bin/bash
 
 echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
+
 if [ -d "$HOME/.emacs.d" ]; then
     mv ~/.emacs.d{,.old}
-else
-    git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 fi
+
+echo "\n cloning ... \n"
+git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 
 if [ -z "$(pgrep emacs)" ] ; then
     echo "Your emacs installation is valid"

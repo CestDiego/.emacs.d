@@ -27,6 +27,20 @@ sudo cp /usr/share/hunspell/en_US.dic /usr/share/hunspell/english.dic
 sudo cp /usr/share/hunspell/eu_ES.aff /usr/share/hunspell/castellano.aff
 sudo cp /usr/share/hunspell/eu_ES.dic /usr/share/hunspell/castellano.dic
 
+echo "Starting Emacs in a separate window"
+emacs &
+
 echo "Installing Python Pip and Flake 8"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
+
+echo "Setting up Aliases for emacs"
+if [[$SHELL = '/bin/bash']];
+    then
+    echo 'alias ec= "emacsclient -n"' >> ~/.bashrc
+    echo 'alias ecn= "emacsclient -c"' >> ~/.bashrc
+    echo 'alias ect= "emacsclient -t"' >> ~/.bashrc
+    else
+    echo 'alias ec= "emacsclient -n"' >> ~/.zshrc
+    echo 'alias ecn= "emacsclient -c"' >> ~/.zshrc
+    echo 'alias ect= "emacsclient -t"' >> ~/.zshrc

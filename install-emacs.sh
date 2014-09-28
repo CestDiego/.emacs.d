@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "DISCLAIMER: THIS WILL ONLY WORK ON UBUNTU 14.04"
-sleep 5
+sleep 3
 
 
 echo "Cheking if You Have emacs ppa installed"
@@ -15,6 +15,9 @@ else
     echo "Installing Emacs"
     sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg -y
 fi
+
+echo "Installing curl"
+sudo apt-get install curl
 
 echo "Installing Monaco Font"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash

@@ -70,9 +70,6 @@ wget -O - https://raw.githubusercontent.com/CestDiego/.emacs.d/master/install-em
 
 ** Hooks
 
-  - org-tree-slide-mode-play-hook
-  - org-tree-slide-mode-stop-hook
-
 * 8. Contact
 
 The author is Diego BERROCAL (cestdiego@gmail.com).

@@ -28,3 +28,4 @@ url
 /.python-environments/
 /site-lisp/webkit/
 /eshell/
+/flycheck_org-clock-save.el

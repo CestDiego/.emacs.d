@@ -28,7 +28,7 @@ The main use of this .emacs.d configuration is to give users of the HackSpace co
 ** Automated install
 Do you trust me?
 #+begin_src sh
-wget -O - https://raw.githubusercontent.com/CestDiego/.emacs.d/master/install-emacs | bash
+wget -O - https://raw.githubusercontent.com/CestDiego/.emacs.d/master/initial-scripts/install-emacs | bash
 #+end_src
 
 * 3. Recommended settings

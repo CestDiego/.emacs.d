@@ -1,31 +1,30 @@
 #!/bin/bash
 
 echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-
 mv ~/.emacs.d{,.old}
 
-echo "\n cloning ... \n"
+echo "\n Cloning ... \n"
 
 git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 
 if [ -z "$(pgrep emacs)" ] ; then
-    echo "Your emacs installation is valid"
+    echo "\n Your emacs installation is valid \n"
     sleep 0.2
     echo "Proceding...."
 else
-    echo "Adding emacs ppa from cassou"
+    echo "\n Adding emacs ppa from cassou \n"
     sudo add-apt-repository ppa:cassou/emacs -y
-    echo "Updating repos"
+    echo "\n Updating repos \n"
     sudo apt-get update
-    echo "Installing Emacs"
+    echo "\n Installing Emacs \n"
     sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg -y
 fi
 
 
-echo "Installing Monaco Font"
+echo "\n Installing Monaco Font \n"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
 
-echo "Installing huspell"
+echo "\n Installing huspell \n"
 sudo apt-get install hunspell hunspell-en-us hunspell-eu-es -y
 
 sudo cp /usr/share/hunspell/en_US.aff /usr/share/hunspell/english.aff
@@ -33,13 +32,13 @@ sudo cp /usr/share/hunspell/en_US.dic /usr/share/hunspell/english.dic
 sudo cp /usr/share/hunspell/eu_ES.aff /usr/share/hunspell/castellano.aff
 sudo cp /usr/share/hunspell/eu_ES.dic /usr/share/hunspell/castellano.dic
 
-echo "Starting Emacs in a separate window"
+echo "\n Starting Emacs in a separate window \n"
 emacs &
 
-echo "Installing Python Pip and Flake 8"
+echo "\n Installing Python Pip and Flake 8 \n"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
-echo "Setting up Aliases for emacs"
+echo "\n Setting up Aliases for emacs \n"
 if [$SHELL = '/bin/bash'];
 then
     echo 'alias ec= "emacsclient -n"' >> ~/.bashrc
@@ -52,7 +51,7 @@ then
     echo 'alias ect= "emacsclient -t"' >> ~/.zshrc
 fi
 
-echo "Setting up the ecn for the emacsclient"
+echo "\n Setting up the ecn for the emacsclient \n"
 
 sudo cp ~/.emacs.d/initial-scripts/ecn /usr/local/bin/ecn
 

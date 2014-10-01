@@ -166,6 +166,7 @@
      less-css-mode
      rainbow-mode
      htmlize
+     jinja2-mode
      grunt
 
      ;; Python

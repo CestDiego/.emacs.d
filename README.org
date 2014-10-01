@@ -52,6 +52,7 @@ wget -O - emacs.hackspace.la | bash
 | 11 | org-tree-slide-activate-message     | Hello...      | String  |
 | 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
 
+
 #+BEGIN_QUOTE
 [*1] { nil| 'lighter | 'outside }
   'outside: shown in the mode line outside of lighter

@@ -8,7 +8,7 @@ echo "\n Cloning ... \n"
 # git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
 git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d
 
-if [ -z "$(pgrep emacs)" ] ; then
+if [ -f "/usr/bin/emacs" ] ; then
     echo "\n Your emacs installation is valid \n"
     sleep 0.2
     echo "Proceding...."

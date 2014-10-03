@@ -3,6 +3,7 @@
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
+
 ;; Set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
 (dolist
@@ -10,12 +11,19 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
+(load-theme 'zenburn t)
+
+;; Highlight current line
+(global-hl-line-mode 0)
+
+;; epic red
+(set-cursor-color "firebrick")
+(setq initial-scratch-message "")
+
 (when (window-system)
    (set-frame-font "Monaco")
    (set-face-attribute 'default nil :family "Monaco" :height 120)
    (set-face-font 'default "Monaco"))
-
-(load-theme 'hc-zenburn)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
@@ -25,9 +33,6 @@
   (tooltip-mode -1)
   (blink-cursor-mode -1))
 
-;; epic red
-(set-cursor-color "firebrick")
-(setq initial-scratch-message "")
 
 (defun toggle-fullscreen ()
   "Toggle full screen"
@@ -44,6 +49,15 @@
 (set-fringe-mode '(0 . 0))
 (set-face-attribute 'mode-line nil  :inverse-video nil :box nil)
 (set-face-attribute 'mode-line-inactive nil :box nil)
-(set-face-attribute 'vertical-border nil :foreground "#383838")
+(set-face-attribute 'vertical-border nil :foreground "#1a1a1a")
+
+
+(defmacro rename-modeline (package-name mode new-name)
+  `(eval-after-load ,package-name
+     '(defadvice ,mode (after rename-modeline activate)
+        (setq mode-name ,new-name))))
+
+(rename-modeline "js2-mode" js2-mode "JS2")
+(rename-modeline "clojure-mode" clojure-mode "Clj")
 
 (provide 'appearance)

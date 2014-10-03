@@ -15,18 +15,14 @@
 (setq user-lisp-dir
       (expand-file-name "user-lisp" user-emacs-directory))
 
-(setq w3m-dir
+(setq w3m-lisp-dir
       (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
-
-(setq webkit-dir
-      (expand-file-name "site-lisp/webkit" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
-(add-to-list 'load-path w3m-dir)
-(add-to-list 'load-path webkit-dir)
+(add-to-list 'load-path w3m-lisp-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -39,6 +35,17 @@
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
+
+;; Add external projects to load path. That means site-lisp
+;; stores some 3rd party projects that are not on melpa
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+;; Add User Defined Functions
+(dolist (defuns (directory-files user-lisp-dir t "\\w+"))
+  (when (file-directory-p defuns)
+    (add-to-list 'load-path defuns)))
 
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
@@ -57,18 +64,27 @@
      org
      org-plus-contrib
      o-blog
+
+     ;; WordPress Edit
+     metaweblog
+     xml-rpc
      org2blog
+
+     ;; Git
+     magit
+     git-gutter
+     gitconfig-mode
+     gitignore-mode
+     git-commit-mode
+     gist
 
      dired-details
      auto-complete
-     gist
      yasnippet
      flx-ido
      ido-ubiquitous
      smartparens
      rainbow-delimiters
-     magit
-     git-gutter
      perspective
      projectile
      multi-term
@@ -84,8 +100,6 @@
      prodigy
      restclient
      deferred
-     xml-rpc
-     metaweblog
 
      ;; Common Lisp
      slime
@@ -191,7 +205,6 @@
       
      ace-jump-mode
      ox-reveal
-     calfw
      spray ;; Speed-reading
 
      ;; jabber
@@ -216,6 +229,11 @@
 ;; Load Mac-only config
 (when is-mac (require 'mac))
 
+;; Save point position between sessions
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
 ;; Emacs server
 (require 'server)
 (unless (server-running-p)
@@ -224,6 +242,11 @@
 ;; Load PATH from shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;; Run at full power please
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)

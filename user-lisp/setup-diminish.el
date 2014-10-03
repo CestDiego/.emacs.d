@@ -1,4 +1,5 @@
 ;; Diminish modeline clutter
+
 (require 'diminish)
 
 (eval-after-load "smartparens"

@@ -29,6 +29,9 @@
   (global-set-key (kbd "s-j") 'windmove-down)
   )
 
+(global-set-key (kbd "C-c j") 'winner-undo)
+(global-set-key (kbd "C-c k") 'winner-redo)
+
 ;; Increase Height and Width of Windows
 (global-set-key (kbd "C->")
                 'increase-window-height)

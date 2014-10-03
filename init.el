@@ -202,7 +202,7 @@
      skewer-mode
 
      ;;Goodies
-      
+     smooth-scrolling 
      ace-jump-mode
      ox-reveal
      spray ;; Speed-reading

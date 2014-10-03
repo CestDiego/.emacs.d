@@ -243,13 +243,9 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-;; Run at full power please
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
-
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

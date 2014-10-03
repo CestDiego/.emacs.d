@@ -1,3 +1,8 @@
+;; Nobody needs to kill emacs that easily
+
+(global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "C-x C-c") 'delete-frame)
+
 ;; helm
 (global-set-key (kbd "C-c o") 'helm-overlord)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -19,11 +24,16 @@
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
 
+(require 'iedit)
+;; Multiple Cursors that work with Evil mode
+;; Use M-I to limit to current line
+;; Use M-{ M-} to expand one line above and one below
+(global-set-key (kbd "C-c i") 'iedit-mode)
 
 ;; use windmove to navigate between windows easily
 (when (fboundp 'windmove-default-keybindings)
   ;; (windmove-default-keybindings)
-  (global-set-key (kbd "s-k") 'windmove-right)
+  (global-set-key (kbd "s-i") 'windmove-right)
   (global-set-key (kbd "s-u") 'windmove-up)
   (global-set-key (kbd "s-h") 'windmove-left)
   (global-set-key (kbd "s-j") 'windmove-down)
@@ -43,7 +53,9 @@
                 'increase-window-width)
 
 
-;; Nicer scrolling with mouse wheel/trackpad.
+;; Turn on the menu bar for exploring new modes
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+
 (unless (and (boundp 'mac-mouse-wheel-smooth-scroll) mac-mouse-wheel-smooth-scroll)
   (global-set-key [wheel-down] (lambda () (interactive) (scroll-up-command 1)))
   (global-set-key [wheel-up] (lambda () (interactive) (scroll-down-command 1)))
@@ -60,17 +72,14 @@
 (global-set-key (kbd "C-c e <up>") 'emms-stop)
 (global-set-key (kbd "C-c e <left>") 'emms-previous)
 (global-set-key (kbd "C-c e <right>") 'emms-next)
-;; ;; dash
-;; (global-set-key "\C-cd" 'dash-at-point)
-;; (global-set-key "\C-ce" 'dash-at-point-with-docset)
 
 ;; other goodies
 (global-set-key (kbd "C-x C-y") 'kill-ring-ido)
 (global-set-key (kbd "C-'") 'multi-term-dedicated-toggle)
 (global-set-key (kbd "C-c g") 'magit-status)
-(global-set-key (kbd "C-c s") 'gist-region-or-buffer-private)
+(global-set-key (kbd "C-c C-s") 'gist-region-or-buffer-private)
+(global-set-key (kbd "C-c C-u C-s") 'gist-region-or-buffer)
 (global-set-key (kbd "C-\\") 'er/expand-region)
-(global-set-key (kbd "C-x C-k C-j") 'dired-jump)
 
 
 (global-set-key (kbd "<C-M-return>") 'rcirc-next-active-buffer)
@@ -79,6 +88,12 @@
 ;; prevent madness
 (global-set-key (kbd "C-x 2") (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (global-set-key (kbd "C-x 3") (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+
+;; Navigation Bindings
+(global-set-key (kbd "<home>") 'beginning-of-buffer)
+(global-set-key (kbd "<next>") 'end-of-buffer)
+
+;; If you are loking for Evil Leader stuff, that's in the setup-evil file
 
 ;; smartparens
 (define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)

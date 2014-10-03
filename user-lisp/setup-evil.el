@@ -23,14 +23,16 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "v" 'visual-line-mode
+  "s" 'sudo-edit
+  "x" 'delete-window
+  "o" 'other-window
   "<SPC>" 'dired-jump)
-(if (featurep 'helm)
-    (evil-leader/set-key
-      "e" 'helm-find-files
-      "b" 'helm-buffer-list)
-    (evil-leader/set-key
-     "e" 'find-file
-     "b" 'switch-to-buffer))
+
+(evil-leader/set-key
+  "f" 'helm-find-files
+  "r" 'helm-recentf
+  "b" 'helm-buffers-list)
+
 (if (featurep 'expand-region)
     (progn
       (setq expand-region-contract-fast-key "z")

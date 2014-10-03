@@ -3,11 +3,15 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        helm-confirm-and-exit-minibuffer
+        help-quit
         sp--self-insert-command
+        sp-backward-kill-word
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        helm-M-x
         sp-backward-delete-char
         sp-delete-char
         ))

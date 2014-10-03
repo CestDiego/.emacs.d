@@ -5,3 +5,6 @@
 [submodule "site-misc/reveal.js"]
 	path = site-misc/reveal.js
 	url = https://github.com/hakimel/reveal.js/
+[submodule "site-lisp/iedit"]
+	path = site-lisp/iedit
+	url = https://github.com/victorhge/iedit.git

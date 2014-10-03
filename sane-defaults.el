@@ -81,6 +81,9 @@
 ;; Don't break lines for me, please
 (setq-default truncate-lines t)
 
+;; Keep cursor away from edges when scrolling up/down
+(require 'smooth-scrolling)
+
 ;; Allow recursive minibuffers
 (setq enable-recursive-minibuffers t)
 
@@ -89,6 +92,11 @@
 
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
+
+;; Represent undo-history as an actual tree (visualize with C-x u)
+(setq undo-tree-mode-lighter "")
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; A saner ediff
 (setq ediff-diff-options "-w")
@@ -103,3 +111,4 @@
 (setq auto-save-default nil)
 
 (provide 'sane-defaults)
+;;; sane-defaults ends here

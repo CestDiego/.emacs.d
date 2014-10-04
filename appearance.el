@@ -20,6 +20,9 @@
 (set-cursor-color "firebrick")
 (setq initial-scratch-message "")
 
+;; Highlight matching parentheses when the point is on them.
+(show-paren-mode 1)
+
 (when (window-system)
    (set-frame-font "Monaco")
    (set-face-attribute 'default nil :family "Monaco" :height 120)

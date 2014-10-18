@@ -29,7 +29,7 @@
   "<SPC>" 'dired-jump)
 
 (evil-leader/set-key
-  "f" 'helm-find-files
+  "f" 'helm-projectile
   "r" 'helm-recentf
   "b" 'helm-buffers-list)
 

@@ -76,6 +76,8 @@
      gitconfig-mode
      gitignore-mode
      git-commit-mode
+     git-messenger
+     git-timemachine
      gist
 
      dired-details

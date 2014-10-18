@@ -1,5 +1,3 @@
-(require 'hi2)
-
 (add-hook 'haskell-mode-hook 'turn-on-haskell-identation)
 
 (eval-after-load 'haskell-mode

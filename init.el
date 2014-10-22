@@ -9,6 +9,9 @@
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
+(setq general-lisp-dir
+      (expand-file-name "general-lisp" user-emacs-directory))
+
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
@@ -19,7 +22,7 @@
       (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path general-lisp-dir)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
 (add-to-list 'load-path w3m-lisp-dir)

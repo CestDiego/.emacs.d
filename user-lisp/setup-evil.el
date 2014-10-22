@@ -25,6 +25,8 @@
   "v" 'visual-line-mode
   "s" 'sudo-edit
   "x" 'delete-window
+  "j"  '(lambda nil (interactive) (split-window-vertically) (other-window 1))
+  "l"  '(lambda nil (interactive) (split-window-horizontally) (other-window 1))
   "o" 'other-window
   "<SPC>" 'dired-jump)
 

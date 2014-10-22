@@ -9,13 +9,13 @@
 (prodigy-define-status :id 'running :face 'prodigy-dull-face)
 (prodigy-define-status :id 'exception :face 'prodigy-red-face)
 
-(prodigy-define-tag
-  :name 'django
-  :on-output (lambda (service output)
-               (when (s-matches? "Starting development server " output)
-                 (prodigy-set-status service 'ready))
-               (when (s-matches? "Exception" output)
-                 (prodigy-set-status service 'exception))))
+;; (prodigy-define-tag
+;;   :name 'django
+;;   :on-output (lambda (service output)
+;;                (when (s-matches? "Starting development server " output)
+;;                  (prodigy-set-status service 'ready))
+;;                (when (s-matches? "Exception" output)
+;;                  (prodigy-set-status service 'exception))))
 
 (prodigy-define-service
   :name "GMAT Dudes"
@@ -25,7 +25,6 @@
   :init (lambda () (pyvenv-workon "test"))
   :kill-signal 'sigkill
   :kill-process-buffer-on-stop t
-  :tags '(django)
   )
 
 ;; (prodigy-define-service

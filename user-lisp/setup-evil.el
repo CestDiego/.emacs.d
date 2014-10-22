@@ -24,7 +24,7 @@
 (evil-leader/set-key
   "v" 'visual-line-mode
   "s" 'sudo-edit
-  "x" 'delete-window
+  "0" 'delete-window
   "j"  '(lambda nil (interactive) (split-window-vertically) (other-window 1))
   "l"  '(lambda nil (interactive) (split-window-horizontally) (other-window 1))
   "o" 'other-window
@@ -33,14 +33,19 @@
 (evil-leader/set-key
   "f" 'helm-projectile
   "r" 'helm-recentf
-  "b" 'helm-buffers-list)
+  "b" 'helm-buffers-list
+  "k" 'kill-buffer)
+
+(when (and (featurep 'evil) (featurep 'evil-leader))
+    (evil-leader/set-key
+      "c" 'ace-jump-char-mode
+      "w" 'ace-jump-word-mode
+      "n" 'ace-jump-line-mode))
 
 (if (featurep 'expand-region)
     (progn
-      (setq expand-region-contract-fast-key "z")
-      (evil-leader/set-key "xx" 'er/expand-region)))
-(evil-leader/set-key
-  "k" 'kill-buffer)
+      (setq expand-region-contract-key "z")
+      (evil-leader/set-key "x" 'er/expand-region)))
 
 ;; these modes are clear from evil
 (add-hook 'term-mode-hook 'evil-emacs-state)
@@ -48,5 +53,6 @@
 (add-hook 'cider-repl-mode-hook 'evil-emacs-state)
 
 (add-hook 'rcirc-mode-hook 'evil-insert-state)
+(add-hook 'commit-mode-ho)
 
 (provide 'setup-evil)

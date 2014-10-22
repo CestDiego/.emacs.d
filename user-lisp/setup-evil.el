@@ -36,12 +36,6 @@
   "b" 'helm-buffers-list
   "k" 'kill-buffer)
 
-(when (and (featurep 'evil) (featurep 'evil-leader))
-    (evil-leader/set-key
-      "c" 'ace-jump-char-mode
-      "w" 'ace-jump-word-mode
-      "n" 'ace-jump-line-mode))
-
 (if (featurep 'expand-region)
     (progn
       (setq expand-region-contract-key "z")
@@ -53,6 +47,6 @@
 (add-hook 'cider-repl-mode-hook 'evil-emacs-state)
 
 (add-hook 'rcirc-mode-hook 'evil-insert-state)
-(add-hook 'commit-mode-ho)
+(add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 (provide 'setup-evil)

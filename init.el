@@ -28,7 +28,7 @@
 (add-to-list 'load-path w3m-lisp-dir)
 
 ;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" general-lisp-dir))
 (load custom-file)
 
 ;; Set up appearance early
@@ -210,6 +210,7 @@
      smooth-scrolling 
      ace-jump-mode
      ox-reveal
+     aggressive-indent
      spray ;; Speed-reading
 
      ;; jabber
@@ -247,6 +248,10 @@
 ;; Load PATH from shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;; Aggressive Indent Mode is better than electric
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)

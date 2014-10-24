@@ -23,9 +23,11 @@
 (show-paren-mode 1)
 
 (when (window-system)
-   (set-frame-font "Monaco")
-   (set-face-attribute 'default nil :family "Monaco" :height 120)
-   (set-face-font 'default "Monaco"))
+  (set-frame-font "Monaco")
+  (set-face-attribute 'default nil :family "Monaco" :height 120)
+  (set-face-font 'default "Monaco")
+  (set-frame-parameter (selected-frame) 'alpha '(75 75))
+  )
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

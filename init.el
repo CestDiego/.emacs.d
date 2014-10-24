@@ -154,6 +154,8 @@
      slamhound
      midje-mode
 
+     ;; Elixir
+     elixir-mode
      
      ;; YAML
      yaml-mode

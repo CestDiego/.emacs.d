@@ -39,7 +39,7 @@
 (if (featurep 'expand-region)
     (progn
       (setq expand-region-contract-key "z")
-      (evil-leader/set-key "x" 'er/expand-region)))
+      (evil-leader/set-key "xx" 'er/expand-region)))
 
 ;; these modes are clear from evil
 (add-hook 'term-mode-hook 'evil-emacs-state)

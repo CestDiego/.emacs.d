@@ -14,7 +14,7 @@
 (load-theme 'zenburn t)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+(global-hl-line-mode 0)
 
 ;; No scratch Message
 (setq initial-scratch-message ";;So this is you again, Diego\n")
@@ -26,7 +26,7 @@
   (set-frame-font "Monaco")
   (set-face-attribute 'default nil :family "Monaco" :height 120)
   (set-face-font 'default "Monaco")
-  (set-frame-parameter (selected-frame) 'alpha '(75 75))
+  (set-frame-parameter (selected-frame) 'alpha '(85 65))
   )
 
 ;; Don't defer screen updates when performing operations

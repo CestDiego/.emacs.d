@@ -106,10 +106,9 @@
      restclient
      deferred
 
-     ;; Common Lisp
-     slime
-     ac-slime
-
+     ;; C/C++ Development
+     ggtags
+     
      ;; Elisp
      dash 
      elisp-slime-nav
@@ -130,6 +129,8 @@
      helm-projectile
      helm-themes
      helm-c-yasnippet
+     helm-gtags
+     helm-descbinds
 
      ;; MongoDB
      inf-mongo
@@ -214,6 +215,7 @@
      ox-reveal
      aggressive-indent
      spray ;; Speed-reading
+     nyan-mode
 
      ;; jabber
      ;; twittering-mode

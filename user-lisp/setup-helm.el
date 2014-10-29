@@ -1,7 +1,16 @@
 (require 'helm-config)
 (require 'helm-projectile)
 
-(setq helm-ff-transformer-show-only-basename nil)
+(setq 
+ helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>
+ helm-quick-update t ; do not display invisible candidates
+ helm-ff-search-library-in-sexp t ; search for library in `require' and `declare-function' sexp.
+ helm-split-window-in-side-p t ;; open helm buffer inside current window, not occupy whole other window
+ helm-candidate-number-limit 500 ; limit the number of displayed canidates
+ helm-ff-file-name-history-use-recentf t
+ helm-move-to-line-cycle-in-source t ; move to end or beginning of source when reaching top or bottom of source.
+ helm-buffers-fuzzy-matching t 
+ helm-ff-transformer-show-only-basename nil)
 
 ;; sauce: http://stackoverflow.com/questions/19283368/how-can-i-open-quickly-a-file-in-emacs
 ;; you'll need to require helm-config and helm-projectile somewhere above
@@ -21,12 +30,32 @@
       helm-c-source-buffer-not-found))     ;; ask to create a buffer otherwise
    "*all-seeing-eye*"))
 
+;; (add-hook 'javascript-mode-hook (lambda () (setq-local helm-dash-docsets '("JavaScript"
+;;                                                                       "BackboneJS"))))
+;; (add-hook 'python-mode-hook (lambda () (setq-local helm-dash-docsets '("Python_2"))))
 
-;; Using Helm-Dash to not to use Zeal-At-Point
 
+(setq
+ helm-gtags-ignore-case t
+ helm-gtags-auto-update t
+ helm-gtags-use-input-at-cursor t
+ helm-gtags-pulse-at-cursor t
+ helm-gtags-prefix-key "\C-cg"
+ helm-gtags-suggested-key-mapping t
+ )
 
-(add-hook 'javascript-mode-hook (lambda () (setq-local helm-dash-docsets '("JavaScript"
-                                                                      "BackboneJS"))))
-(add-hook 'python-mode-hook (lambda () (setq-local helm-dash-docsets '("Python_2"))))
+(require 'helm-gtags)
+;; Enable helm-gtags-mode
+(add-hook 'dired-mode-hook 'helm-gtags-mode)
+(add-hook 'eshell-mode-hook 'helm-gtags-mode)
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
 
+(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+(define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-select)
+(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 (provide 'setup-helm)

@@ -93,7 +93,8 @@
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "<next>") 'end-of-buffer)
 
-;; If you are loking for Evil Leader stuff, that's in the setup-evil file
+;; If you are loking for Evil Leader stuff, that's in the setup-evil
+;; file
 
 ;; smartparens
 (define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)

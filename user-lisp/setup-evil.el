@@ -14,6 +14,13 @@
 (define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
 
+(define-key global-map (kbd "C-s-<") 'evil-window-decrease-width)
+(define-key global-map (kbd "C-s->") 'evil-window-increase-width)
+
+(define-key global-map (kbd "C-s-+") 'evil-window-decrease-height)
+(define-key global-map (kbd "C-s--") 'evil-window-increase-height)
+
+
 ;; Add Evil mode
 (global-set-key (kbd "C-M-;") 'ace-jump-word-mode)
 ;; (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-word-mode)

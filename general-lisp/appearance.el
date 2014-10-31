@@ -26,7 +26,7 @@
   (set-frame-font "Monaco")
   (set-face-attribute 'default nil :family "Monaco" :height 120)
   (set-face-font 'default "Monaco")
-  (set-frame-parameter (selected-frame) 'alpha '(85 65))
+  (set-frame-parameter (selected-frame) 'alpha '(65 65))
   )
 
 ;; Don't defer screen updates when performing operations

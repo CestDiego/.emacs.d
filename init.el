@@ -157,6 +157,7 @@
 
      ;; Elixir
      elixir-mode
+     alchemist
      
      ;; YAML
      yaml-mode

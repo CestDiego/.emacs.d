@@ -4,7 +4,6 @@
 (require 'epa-file)
 ;; Change user info
 (setq rcirc-default-nick "cestdiego")
-(setq rcirc-default-port 1984)
 (setq rcirc-default-user-name "cestdiego")
 (setq rcirc-default-full-name "Diego Berrocal")
 
@@ -21,6 +20,39 @@
 ;;          :channels '("#jupiterbroadcasting")
 ;;          :password geekshed-passwd ))
 
+;; Join these channels at startup.
+
+;; OLD SCHOOL RCICI
+
+;; Join these channels at startup.
+(setq rcirc-server-alist
+      '(
+        ("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
+        ("irc.freenode.net" :channels ("#limajs #emacs #rcirc #haskell"))))
+
+
+;;Old school authinfo ;_;
+;; (setq rcirc-authinfo
+;;       '(("geekshed" nickserv "cestdiego" "password")
+;;         ("freenode" nickserv "cestdiego" "password")))
+
+(defadvice rcirc (before rcirc-read-from-authinfo activate)
+  "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
+This doesn't support the chanserv auth method"
+  (unless arg
+    (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
+                                   :require '(:port :user :secret)))
+      (let ((secret (plist-get p :secret))
+            (method (intern (plist-get p :port))))
+        (add-to-list 'rcirc-authinfo
+                     (list (plist-get p :host)
+                           method
+                           (plist-get p :user)
+                           (if (functionp secret)
+                               (funcall secret)
+                             secret)))))))
+
+;; ----------------- END ------------------
 
 (defun rcirc-detach-buffer ()
   (interactive)
@@ -33,7 +65,7 @@
       (rcirc-update-short-buffer-names)
       (if (rcirc-channel-p rcirc-target)
           (rcirc-send-strng (rcirc-buffer-process)
-                             (concat "DETACH " rcirc-target))))
+                            (concat "DETACH " rcirc-target))))
     (setq rcirc-target nil)
     (kill-buffer buffer)))
 
@@ -48,45 +80,12 @@
 (setq rcirc-time-format "%Y-%m-%d %H:%M ")
 
 
-;; OLD SCHOOL RCICI
-
-;; ;Join these channels at startup.
-;; (setq rcirc-server-alist
-;;       '(
-;;         ("irc.geekshed.net" :port 6697 :encryption tls
-;;          :channels ("#jupiterbroadcasting"))
-;;         ("irc.freenode.net" :port 6697 :encryption tls
-;;             :channels ("#limajs #emacs #rcirc #haskell"))))
-
-
-;; ;Old school authinfo ;_;
-;; (setq rcirc-authinfo
-;;       '(("geekshed" nickserv "cestdiego" "password")
-;;         ("freenode" nickserv "cestdiego" "password")))
-
-;; (defadvice rcirc (before rcirc-read-from-authinfo activate)
-;;   "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
-;; This doesn't support the chanserv auth method"
-;;   (unless arg
-;;     (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
-;;                                    :require '(:port :user :secret)))
-;;       (let ((secret (plist-get p :secret))
-;;             (method (intern (plist-get p :port))))
-;;         (add-to-list 'rcirc-authinfo
-;;                      (list (plist-get p :host)
-;;                            method
-;;                            (plist-get p :user)
-;;                            (if (functionp secret)
-;;                                (funcall secret)
-;;                              secret)))))))
-
-; ----------------- END ------------------
 
 (defun rcirc-notify-send-popup (process sender response target text)
   (let ((nick (rcirc-nick process)))
     (when (and (string-match (regexp-quote nick) text)
-               (not (string= nick sender))
-               (not (string= (rcirc-server-name process) sender)))
+             (not (string= nick sender))
+             (not (string= (rcirc-server-name process) sender)))
       (notify-send-popup sender text))))
 
 (add-hook 'rcirc-print-functions 'rcirc-notify-send-popup)

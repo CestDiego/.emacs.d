@@ -32,13 +32,16 @@
   "v" 'visual-line-mode
   "s" 'sudo-edit
   "0" 'delete-window
+  "g" 'magit-status
   "j"  '(lambda nil (interactive) (split-window-vertically) (other-window 1))
   "l"  '(lambda nil (interactive) (split-window-horizontally) (other-window 1))
   "o" 'other-window
   "<SPC>" 'dired-jump)
 
+
 (evil-leader/set-key
-  "f" 'helm-projectile
+  "p" 'helm-projectile
+  "f" 'helm-projectile-find-file
   "r" 'helm-recentf
   "b" 'helm-buffers-list
   "k" 'kill-buffer)
@@ -46,7 +49,7 @@
 (if (featurep 'expand-region)
     (progn
       (setq expand-region-contract-key "z")
-      (evil-leader/set-key "xx" 'er/expand-region)))
+      (evil-leader/set-key "x" 'er/expand-region)))
 
 ;; these modes are clear from evil
 (add-hook 'term-mode-hook 'evil-emacs-state)

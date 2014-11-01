@@ -92,7 +92,7 @@
      rainbow-delimiters
      perspective
      projectile
-     multi-term
+     ;; multi-term
      exec-path-from-shell
      whitespace-cleanup-mode
      saveplace

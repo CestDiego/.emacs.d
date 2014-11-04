@@ -17,7 +17,7 @@
 (global-hl-line-mode 0)
 
 ;; No scratch Message
-(setq initial-scratch-message ";;So this is you again, Diego\n")
+(setq initial-scratch-message ";; So this is you again, Diego\n\n")
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
@@ -26,7 +26,7 @@
   (set-frame-font "Monaco")
   (set-face-attribute 'default nil :family "Monaco" :height 120)
   (set-face-font 'default "Monaco")
-  (set-frame-parameter (selected-frame) 'alpha '(65 65))
+  (set-frame-parameter (selected-frame) 'alpha '(60 60))
   )
 
 ;; Don't defer screen updates when performing operations
@@ -61,7 +61,7 @@
      '(defadvice ,mode (after rename-modeline activate)
         (setq mode-name ,new-name))))
 
-(rename-modeline "js2-mode" js2-mode "JS2")
+(rename-modeline "Javascript-IDE" js2-mode "JS2")
 (rename-modeline "clojure-mode" clojure-mode "Clj")
 
 

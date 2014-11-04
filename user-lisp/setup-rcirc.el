@@ -7,6 +7,9 @@
 (setq rcirc-default-user-name "cestdiego")
 (setq rcirc-default-full-name "Diego Berrocal")
 
+;; Include date in time stamp.
+(setq rcirc-time-format "%Y-%m-%d %H:%M ")
+
 ;; (require 'secrets)
 ;; (setq freenode-passwd (concat znc-user "/freenode:" znc-password ))
 ;; (setq geekshed-passwd (concat znc-user "/geekshed:" znc-password ))
@@ -22,7 +25,7 @@
 
 ;; Join these channels at startup.
 
-;; OLD SCHOOL RCICI
+;; OLD SCHOOL RCIRC
 
 ;; Join these channels at startup.
 (setq rcirc-server-alist

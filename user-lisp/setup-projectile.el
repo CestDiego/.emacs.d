@@ -1,6 +1,6 @@
 (require 'persp-projectile)
 (projectile-persp-bridge helm-projectile)
-(setq projectile-switch-project-action 'helm-projectile-find-file)
+(setq projectile-switch-project-action 'helm-projectile)
 (projectile-global-mode)
 
 ;; Disable this line  if you do not want to use helm and
@@ -24,6 +24,10 @@
         ("frag" "vert")
         (nil "lock" "gpg")
         ("lock" "")
-        ("gpg" "")))
+        ("gpg" "")
+        ("html" "js" "css")
+        ("js" "html" "css")
+        ("css" "js" "html")
+        ))
 
 (provide 'setup-projectile)

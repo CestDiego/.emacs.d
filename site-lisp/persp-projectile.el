@@ -6,7 +6,7 @@
 ;; Created: 2014-04-14
 ;; Keywords: project, convenience
 ;; Version: 0.1.0
-;; Package-Requires: ((perspective "1.9") (projectile "0.10.0") (cl-lib "0.3"))
+;; Package-Requires: ((perspective "1.9") (projectile "0.11.0") (cl-lib "0.3"))
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -60,20 +60,21 @@ project, this advice creates a new perspective for that project."
 (projectile-persp-bridge projectile-dired)
 (projectile-persp-bridge projectile-find-file)
 
-(defun projectile-persp-switch-project ()
+(defun projectile-persp-switch-project (project-to-switch)
   "Switch to a project or perspective we have visited before.
 If the perspective of corresponding project does not exist, this
-function will call `persp-switch' to create one and swith to that before
-`projectile-switch-project' invokes `projectile-switch-project-action'.
-Otherwise, this function calls `persp-switch' to an existing
-perspective of the project that we're switching to"
-  (interactive)
-  (let* ((project-to-switch
-          (projectile-completing-read "Switch to project: "
-                                      (projectile-relevant-known-projects)))
-         (name (file-name-nondirectory (directory-file-name project-to-switch)))
+function will call `persp-switch' to create one and switch to
+that before `projectile-switch-project' invokes
+`projectile-switch-project-action'.
+
+Otherwise, this function calls `persp-switch' to switch to an
+existing perspective of the project unless we're already in that
+perspective in which case `projectile-switch-project' is called."
+  (interactive (list (projectile-completing-read "Switch to project: "
+                                                 (projectile-relevant-known-projects))))
+  (let* ((name (file-name-nondirectory (directory-file-name project-to-switch)))
          (persp (gethash name perspectives-hash)))
-    (if persp
+    (if (and persp (not (equal persp persp-curr)))
         (persp-switch name)
       (projectile-switch-project-by-name project-to-switch))))
 

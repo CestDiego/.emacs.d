@@ -207,6 +207,7 @@
      ;; Javascript
      js2-mode
      js2-refactor
+     flymake-jshint
      ac-js2
      skewer-mode
 

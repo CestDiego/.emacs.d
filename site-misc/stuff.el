@@ -1,11 +1,10 @@
-;;So this is you again, Diego
 ;; eval this buffer and then start modifying the data in the table below.
 ;;
 ;; ------------
 ;; Alpha   | 110
 ;; Beta    | 185
 ;; Gamma   | 164
-;; Delta   | 120
+;; Delta   | 20
 ;; Epsilon | 180
 ;; 
 ;; ----------------------------------------------------------------------

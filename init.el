@@ -204,9 +204,10 @@
      ;; Coffeescript
      coffee-mode
 
-     ;; Javascript
+     ;; javaScript
      js2-mode
      js2-refactor
+     requirejs-mode
      flymake-jshint
      ac-js2
      skewer-mode

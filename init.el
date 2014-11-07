@@ -83,6 +83,10 @@
      git-timemachine
      gist
 
+     ;; Company Mode for Completitions
+     company-tern
+
+
      dired-details
      ;; auto-complete
      yasnippet
@@ -210,8 +214,9 @@
      js2-refactor
      requirejs-mode
      flymake-jshint
-     ac-js2
+     tern
      skewer-mode
+     ;; ac-js2
 
      ;;Goodies
      smooth-scrolling 

@@ -11,7 +11,7 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-(load-theme 'zenburn t)
+(load-theme 'hc-zenburn t)
 
 ;; Highlight current line
 (global-hl-line-mode 0)
@@ -26,7 +26,7 @@
   (set-frame-font "Monaco")
   (set-face-attribute 'default nil :family "Monaco" :height 120)
   (set-face-font 'default "Monaco")
-  (set-frame-parameter (selected-frame) 'alpha '(70 70))
+  (set-frame-parameter (selected-frame) 'alpha '(75 75))
   )
 
 ;; Don't defer screen updates when performing operations

@@ -24,12 +24,12 @@
 ;;(setq TeX-PDF-mode t)
 
 ;; Enabling Autocomplete by ac-math, uses auto-complete default by emacs
-(add-to-list 'ac-modes 'LaTeX-mode)   ; make auto-complete aware of `latex-mode`
+;; (add-to-list 'ac-modes 'LaTeX-mode)   ; make auto-complete aware of `latex-mode`
 
-(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
-  (setq ac-sources
-     (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
-               ac-sources)))
+;; (defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+;;   (setq ac-sources
+;;      (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
+;;                ac-sources)))
 
 (add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
 (add-hook 'LaTeX-mode-hook (lambda () (set-input-method "latin-1-prefix")))

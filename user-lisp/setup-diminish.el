@@ -17,8 +17,8 @@
 (eval-after-load "yas-minor-mode"
   '(diminish 'yas-minor-mode))
 
-(eval-after-load "auto-complete"
-  '(diminish 'auto-complete-mode))
+;; (eval-after-load "auto-complete"
+;;   '(diminish 'auto-complete-mode))
 
 (eval-after-load "yasnippet"
   '(diminish 'yas-minor-mode))

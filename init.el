@@ -84,7 +84,7 @@
      gist
 
      dired-details
-     auto-complete
+     ;; auto-complete
      yasnippet
      flx-ido
      ido-ubiquitous
@@ -131,6 +131,7 @@
      helm-c-yasnippet
      helm-gtags
      helm-descbinds
+     helm-github-stars
 
      ;; MongoDB
      inf-mongo

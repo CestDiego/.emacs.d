@@ -31,3 +31,5 @@ url
 /flycheck_org-clock-save.el
 /flycheck_init.el
 /site-misc/flycheck_stuff.el
+/hgs-cache
+/user-lisp/.tern-port

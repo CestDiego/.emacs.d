@@ -83,9 +83,11 @@
      git-timemachine
      gist
 
-     ;; Company Mode for Completitions
+     ;; Company Mode for Completions
+     company
      company-tern
-
+     company-ycmd
+     ;; emacs-ycmd
 
      dired-details
      ;; auto-complete
@@ -123,6 +125,8 @@
      evil-surround				
      evil-leader
      evil-numbers
+     evil-escape
+     evil-lisp-state
      
      ;; Haskell
      haskell-mode
@@ -134,6 +138,7 @@
      helm-themes
      helm-c-yasnippet
      helm-gtags
+     helm-flycheck
      helm-descbinds
      helm-github-stars
 
@@ -141,7 +146,7 @@
      inf-mongo
      ob-mongo
 
-     ;; gnus
+     ;; Gnus and Mail
      ;; gnus
      ;; bbdb
 
@@ -195,7 +200,6 @@
      rainbow-mode
      htmlize
      jinja2-mode
-     grunt
 
      ;; Python
      elpy
@@ -265,6 +269,7 @@
 ;; Aggressive Indent Mode is better than electric
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'rcirc-mode)
 
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)

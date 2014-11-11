@@ -62,5 +62,10 @@
 
 (setq helm-github-stars-username "cestdiego")
 
+(require 'helm-flycheck) ;; Not necessary if using ELPA package
+(eval-after-load 'flycheck
+  '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
+
+
 (helm-projectile-on)
 (provide 'setup-helm)

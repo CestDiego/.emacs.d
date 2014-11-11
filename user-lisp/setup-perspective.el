@@ -44,14 +44,14 @@
                 (find-file "~/.emacs.d/init.el")))
 (define-key persp-mode-map (kbd "C-x p e") 'custom-persp/emacs)
 
-;; (defun irc-config()
-;;   (load-library "~/.emacs.d/user-lisp/defuns/secret.el.gpg")
-;;   (irc-cestdiego))
+(defun irc-config()
+  (load-library "~/.emacs.d/user-lisp/defuns/secret.el.gpg")
+  (irc-cestdiego))
 
 (defun custom-persp/irc ()
   (interactive)
   ;; (custom-persp "@IRC" (irc-cestdiego)))
-  (custom-persp "@IRC" (rcirc nil)))
+  (custom-persp "@IRC" (irc-config)))
 (define-key persp-mode-map (kbd "C-x p i") 'custom-persp/irc)
 
 (defun custom-persp/calfw()

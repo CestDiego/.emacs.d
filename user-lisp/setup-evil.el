@@ -9,6 +9,8 @@
 (global-evil-leader-mode)
 (evil-mode 1)
 
+(require 'evil-lisp-state)
+(define-key evil-normal-state-map "L" 'evil-lisp-state)
 
 ;; Evil Numbers are evil
 (define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)

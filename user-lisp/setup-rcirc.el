@@ -7,8 +7,6 @@
 (setq rcirc-default-user-name "cestdiego")
 (setq rcirc-default-full-name "Diego Berrocal")
 
-;; Include date in time stamp.
-(setq rcirc-time-format "%Y-%m-%d %H:%M ")
 
 ;; (require 'secrets)
 ;; (setq freenode-passwd (concat znc-user "/freenode:" znc-password ))
@@ -26,12 +24,14 @@
 ;; Join these channels at startup.
 
 ;; OLD SCHOOL RCIRC
+;; ----------------- START ------------------
 
 ;; Join these channels at startup.
-(setq rcirc-server-alist
-      '(
-        ("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
-        ("irc.freenode.net" :channels ("#limajs #emacs #rcirc #haskell"))))
+;; (setq rcirc-server-alist
+;;       '(
+;;         ("hackspace.irc.slack.com" :channels ("#emacs"))
+;;         ("irc.geekshed.net" :channels ("#jupiterbroadcasting"))
+;;         ("irc.freenode.net" :channels ("#limajs #emacs #rcirc #haskell"))))
 
 
 ;;Old school authinfo ;_;
@@ -39,21 +39,21 @@
 ;;       '(("geekshed" nickserv "cestdiego" "password")
 ;;         ("freenode" nickserv "cestdiego" "password")))
 
-(defadvice rcirc (before rcirc-read-from-authinfo activate)
-  "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
-This doesn't support the chanserv auth method"
-  (unless arg
-    (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
-                                   :require '(:port :user :secret)))
-      (let ((secret (plist-get p :secret))
-            (method (intern (plist-get p :port))))
-        (add-to-list 'rcirc-authinfo
-                     (list (plist-get p :host)
-                           method
-                           (plist-get p :user)
-                           (if (functionp secret)
-                               (funcall secret)
-                             secret)))))))
+;;       (defadvice rcirc (before rcirc-read-from-authinfo activate)
+;;         "Allow rcirc to read authinfo from ~/.authinfo.gpg via the auth-source API.
+;; This doesn't support the chanserv auth method"
+;;         (unless arg
+;;           (dolist (p (auth-source-search :port '("nickserv" "bitlbee" "quakenet")
+;;                                          :require '(:port :user :secret)))
+;;             (let ((secret (plist-get p :secret))
+;;                   (method (intern (plist-get p :port))))
+;;               (add-to-list 'rcirc-authinfo
+;;                            (list (plist-get p :host)
+;;                                  method
+;;                                  (plist-get p :user)
+;;                                  (if (functionp secret)
+;;                                      (funcall secret)
+;;                                    secret)))))))
 
 ;; ----------------- END ------------------
 
@@ -97,30 +97,30 @@ This doesn't support the chanserv auth method"
 ;;;; Auto reconnect
 ;;;; Taken from http://www.emacswiki.org/emacs/rcircReconnect
 
-            (defun-rcirc-command reconnect (arg)
-              "Reconnect the server process."
-              (interactive "i")
-              (if (buffer-live-p rcirc-server-buffer)
-                  (with-current-buffer rcirc-server-buffer
-                    (let ((reconnect-buffer (current-buffer))
-                          (server (or rcirc-server rcirc-default-server))
-                          (port (if (boundp 'rcirc-port) rcirc-port rcirc-default-port))
-                          (nick (or rcirc-nick rcirc-default-nick))
-                          channels)
-                      (dolist (buf (buffer-list))
-                        (with-current-buffer buf
-                          (when (equal reconnect-buffer rcirc-server-buffer)
-                            (remove-hook 'change-major-mode-hook
-                                         'rcirc-change-major-mode-hook)
-                            (let ((server-plist (cdr (assoc-string server rcirc-server-alist))))
-                              (when server-plist
-                                (setq channels (plist-get server-plist :channels))))
-                            )))
-                      (if process (delete-process process))
-                      (rcirc-connect server port nick
-                                     nil
-                                     nil
-                                     channels)))))
+(defun-rcirc-command reconnect (arg)
+  "Reconnect the server process."
+  (interactive "i")
+  (if (buffer-live-p rcirc-server-buffer)
+      (with-current-buffer rcirc-server-buffer
+        (let ((reconnect-buffer (current-buffer))
+              (server (or rcirc-server rcirc-default-server))
+              (port (if (boundp 'rcirc-port) rcirc-port rcirc-default-port))
+              (nick (or rcirc-nick rcirc-default-nick))
+              channels)
+          (dolist (buf (buffer-list))
+            (with-current-buffer buf
+              (when (equal reconnect-buffer rcirc-server-buffer)
+                (remove-hook 'change-major-mode-hook
+                             'rcirc-change-major-mode-hook)
+                (let ((server-plist (cdr (assoc-string server rcirc-server-alist))))
+                  (when server-plist
+                    (setq channels (plist-get server-plist :channels))))
+                )))
+          (if process (delete-process process))
+          (rcirc-connect server port nick
+                         nil
+                         nil
+                         channels)))))
 
 ;;; Attempt reconnection at increasing intervals when a connection is
 ;;; lost.
@@ -144,7 +144,7 @@ This doesn't support the chanserv auth method"
 (defun rcirc-reconnect-schedule (process &optional sentinel seconds)
   (condition-case err
       (when (and (eq 'closed (process-status process))
-                 (buffer-live-p (process-buffer process)))
+               (buffer-live-p (process-buffer process)))
         (with-rcirc-process-buffer process
           (unless seconds
             (setq seconds (exp (1+ rcirc-reconnect-attempts))))
@@ -159,12 +159,12 @@ This doesn't support the chanserv auth method"
     (error
      (rcirc-print process "RCIRC" "ERROR" nil
                   (format "%S" err) t)))
-)
+  )
 
 (defun rcirc-reconnect-perform-reconnect (process)
   (when (and (eq 'closed (process-status process))
-             (buffer-live-p (process-buffer process))
-             )
+           (buffer-live-p (process-buffer process))
+           )
     (with-rcirc-process-buffer process
       (when rcirc-reconnect-mode
         (if (get-buffer-process (process-buffer process))
@@ -188,15 +188,15 @@ This doesn't support the chanserv auth method"
                           (format "reconnection attempt failed: %s" err)  t)
              (rcirc-reconnect-schedule process))))))))
 
-(add-hook 'rcirc-mode-hook (lambda ()
-                             ;; Turn on spell checking.
-                             (flyspell-mode 1)
-                             (rcirc-omit-mode)
-                             (smartparens-mode 0)
-                             (set-input-method "latin-1-prefix")
-                             ;; Keep input line at bottom.
-                             (set (make-local-variable 'scroll-conservatively)
-                                  8192)
-                             (rcirc-reconnect-mode 1)) )
+(add-hook 'rcirc-mode-hook '(lambda ()
+                              ;; Turn on spell checking.
+                              (flyspell-mode 1)
+                              (rcirc-omit-mode)
+                              (smartparens-mode 0)
+                              (set-input-method "latin-1-prefix")
+                              ;; Keep input line at bottom.
+                              (set (make-local-variable 'scroll-conservatively)
+                                   8192)
+                              (rcirc-reconnect-mode 1)) )
 
 (provide 'setup-rcirc)

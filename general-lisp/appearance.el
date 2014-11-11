@@ -23,10 +23,10 @@
 (show-paren-mode 1)
 
 (when (window-system)
-  (set-frame-font "Monaco")
-  (set-face-attribute 'default nil :family "Monaco" :height 120)
-  (set-face-font 'default "Monaco")
-  (set-frame-parameter (selected-frame) 'alpha '(75 75))
+  (set-frame-font "Consolas")
+  (set-face-attribute 'default nil :family "Consolas" :height 140)
+  (set-face-font 'default "Consolas")
+  (set-frame-parameter (selected-frame) 'alpha '(70 70))
   )
 
 ;; Don't defer screen updates when performing operations

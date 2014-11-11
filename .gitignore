@@ -33,3 +33,5 @@ url
 /site-misc/flycheck_stuff.el
 /hgs-cache
 /user-lisp/.tern-port
+/.tern-port
+/general-lisp/.tern-port

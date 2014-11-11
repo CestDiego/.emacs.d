@@ -37,6 +37,12 @@ wget -O - emacs.hackspace.la | bash
 git clone --recursive http://github.com/CestDiego/.emacs.d
 #+end_src
 
+Copy the .fonts folder into the ~ folder and then run
+
+#+begin_src sh
+fc-cache -f -v
+#+end_src
+
 * 3. Recommended settings
 
 * 4. Profiles

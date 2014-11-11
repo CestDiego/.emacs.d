@@ -14,6 +14,9 @@
 
 
 (add-to-list 'company-backends 'company-tern)
+(add-to-list 'company-backends 'company-readline)
+
+(add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
 ;; If you don't like circles after object's own properties consider less
 ;; annoying marker for that purpose.
@@ -33,8 +36,6 @@
       '(not eshell-mode comint-mode org-mode))
 
 (add-hook 'after-init-hook 'global-company-mode)
-
-
 
 (defun check-expansion ()
   (save-excursion

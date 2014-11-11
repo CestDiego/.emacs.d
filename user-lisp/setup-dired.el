@@ -7,7 +7,7 @@
 (require 'dired-x)
 (setq-default dired-omit-files-p t)
 
-; Mac OS X clutter is uninteresting.
+;; Mac OS X clutter is uninteresting.
 (setq dired-omit-files
       (concat dired-omit-files "\\|^\\.DS_Store$\\|^__MACOSX$\\|^\\.localized$"))
 

@@ -87,7 +87,7 @@
      company
      company-tern
      company-ycmd
-     ;; emacs-ycmd
+     ycmd
 
      dired-details
      ;; auto-complete

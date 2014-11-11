@@ -30,9 +30,6 @@
      ("#073642" . 100))))
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
- '(org-agenda-files
-   (quote
-    ("~/Documents/Org-Notes/IntallingNotes.org" "~/Documents/Org-Notes/GA.org" "~/Documents/Org-Notes/GMAT-Dudes.org" "~/Documents/Org-Notes/Reveal.org" "~/Documents/Org-Notes/nuevo.org" "~/Documents/Org-Notes/today.org")))
  '(org-html-doctype "html5")
  '(org-latex-create-formula-image-program (quote imagemagick))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))

@@ -7,11 +7,11 @@
 (setq company-dabbrev-downcase nil)
 (setq company-dabbrev-ignore-case t)
 
-(add-hook 'js-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-dabbrev-code company-yasnippet)))))
-
+;; (add-hook 'js-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-dabbrev-code company-yasnippet)))))
+(global-set-key (kbd "C-c y") 'company-yasnippet)
 
 (add-to-list 'company-backends 'company-tern)
 (add-to-list 'company-backends 'company-readline)
@@ -37,30 +37,30 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
-(defun check-expansion ()
-  (save-excursion
-    (if (looking-at "\\_>") t
-      (backward-char 1)
-      (if (looking-at "\\.") t
-        (backward-char 1)
-        (if (looking-at "->") t nil)))))
+;; (defun check-expansion ()
+;;   (save-excursion
+;;     (if (looking-at "\\_>") t
+;;       (backward-char 1)
+;;       (if (looking-at "\\.") t
+;;         (backward-char 1)
+;;         (if (looking-at "->") t nil)))))
 
-(defun do-yas-expand ()
-  (let ((yas/fallback-behavior 'return-nil))
-    (yas/expand)))
+;; (defun do-yas-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil))
+;;     (yas/expand)))
 
-(defun tab-indent-or-complete ()
-  (interactive)
-  (if (minibufferp)
-      (minibuffer-complete)
-    (if (or (not yas/minor-mode)
-           (null (do-yas-expand)))
-        (if (check-expansion)
-            (company-complete-common)
-          (indent-for-tab-command)))))
+;; (defun tab-indent-or-complete ()
+;;   (interactive)
+;;   (if (minibufferp)
+;;       (minibuffer-complete)
+;;     (if (or (not yas/minor-mode)
+;;            (null (do-yas-expand)))
+;;         (if (check-expansion)
+;;             (company-complete-common)
+;;           (indent-for-tab-command)))))
 
 
-(define-key prog-mode-map [tab] 'tab-indent-or-complete)
+;; (define-key prog-mode-map [tab] 'tab-indent-or-complete)
 
 
 (provide 'setup-company)

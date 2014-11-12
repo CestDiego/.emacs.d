@@ -9,6 +9,7 @@
  helm-candidate-number-limit 500 ; limit the number of displayed canidates
  helm-ff-file-name-history-use-recentf t
  helm-buffers-fuzzy-matching t 
+ helm-case-fold-search 'smart 
  helm-ff-transformer-show-only-basename nil)
 
 ;; sauce: http://stackoverflow.com/questions/19283368/how-can-i-open-quickly-a-file-in-emacs

@@ -3,10 +3,10 @@
                             (setq yas-dont-activate t)))
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
 ;; (define-key yas-minor-mode-map (kbd "C-M-<tab>") 'yas-expand)
 ;; Now with company mode this is great
-;; (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
 
 (yas-global-mode 1)
 (provide 'setup-yasnippet)

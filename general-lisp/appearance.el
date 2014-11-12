@@ -11,7 +11,7 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-(load-theme 'hc-zenburn t)
+(load-theme 'zenburn t)
 
 ;; Highlight current line
 (global-hl-line-mode 0)

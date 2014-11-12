@@ -1,10 +1,10 @@
 ;;; zenburn-theme.el --- A low contrast color theme for Emacs.
 
-;; Copyright (C) 2011-2013 Bozhidar Batsov
+;; Copyright (C) 2011-2014 Bozhidar Batsov
 
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://github.com/bbatsov/zenburn-emacs
-;; Version: 2.1
+;; Version: 2.3-cvs
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@
     ("zenburn-bg-1"     . "#2B2B2B")
     ("zenburn-bg-05"    . "#383838")
     ("zenburn-bg"       . "#3F3F3F")
+    ("zenburn-bg+05"    . "#494949")
     ("zenburn-bg+1"     . "#4F4F4F")
     ("zenburn-bg+2"     . "#5F5F5F")
     ("zenburn-bg+3"     . "#6F6F6F")
@@ -215,15 +216,15 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(popup-scroll-bar-background-face ((t (:background ,zenburn-bg-1))))
    `(popup-isearch-match ((t (:background ,zenburn-bg :foreground ,zenburn-fg))))
 ;;;;; company-mode
-   `(company-tooltip ((t (:foreground ,zenburn-yellow :background ,zenburn-bg+1))))
+   `(company-tooltip ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
    `(company-tooltip-selection ((t (:foreground ,zenburn-fg :background ,zenburn-bg-1))))
    `(company-tooltip-mouse ((t (:background ,zenburn-bg-1))))
-   `(company-tooltip-common ((t (:foreground ,zenburn-yellow :background ,zenburn-bg-1))))
-   `(company-tooltip-common-selection ((t (:background ,zenburn-bg-1))))
-   `(company-scrollbar-fg ((t (:background ,zenburn-green+1))))
-   `(company-scrollbar-bg ((t (:background ,zenburn-bg-1))))
-   `(company-preview ((t (:background ,zenburn-green+1))))
-   `(company-preview-common ((t (:background ,zenburn-bg-1))))
+   `(company-tooltip-common ((t (:foreground ,zenburn-green+2))))
+   `(company-tooltip-common-selection ((t (:foreground ,zenburn-green+2))))
+   `(company-scrollbar-fg ((t (:background ,zenburn-bg-1))))
+   `(company-scrollbar-bg ((t (:background ,zenburn-bg+2))))
+   `(company-preview ((t (:background ,zenburn-green+2))))
+   `(company-preview-common ((t (:foreground ,zenburn-green+2 :background ,zenburn-bg-1))))
 ;;;;; bm
    `(bm-face ((t (:background ,zenburn-yellow-1 :foreground ,zenburn-bg))))
    `(bm-fringe-face ((t (:background ,zenburn-yellow-1 :foreground ,zenburn-bg))))
@@ -245,9 +246,9 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(diff-changed ((t (:foreground ,zenburn-yellow))))
    `(diff-removed ((,class (:foreground ,zenburn-red :background nil))
                    (t (:foreground ,zenburn-red-3 :background nil))))
-   `(diff-refine-added ((t :inherit diff-added :weight bold)))
-   `(diff-refine-change ((t :inherit diff-changed :weight bold)))
-   `(diff-refine-removed ((t :inherit diff-removed :weight bold)))
+   `(diff-refine-added ((t (:inherit diff-added :weight bold))))
+   `(diff-refine-change ((t (:inherit diff-changed :weight bold))))
+   `(diff-refine-removed ((t (:inherit diff-removed :weight bold))))
    `(diff-header ((,class (:background ,zenburn-bg+2))
                   (t (:background ,zenburn-fg :foreground ,zenburn-bg))))
    `(diff-file-header
@@ -314,6 +315,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(egg-diff-file-header ((t (:foreground ,zenburn-yellow-2))))
    `(egg-section-title ((t (:foreground ,zenburn-yellow))))
    `(egg-stash-mono ((t (:foreground ,zenburn-green+4))))
+;;;;; elfeed
+   `(elfeed-search-date-face ((t (:foreground ,zenburn-yellow-1 :underline t
+                                              :weight bold))))
+   `(elfeed-search-tag-face ((t (:foreground ,zenburn-green))))
+   `(elfeed-search-feed-face ((t (:foreground ,zenburn-cyan))))
 ;;;;; emacs-w3m
    `(w3m-anchor ((t (:foreground ,zenburn-yellow :underline t
                                  :weight bold))))
@@ -603,7 +609,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(macrostep-macro-face
      ((t (:underline t))))
 ;;;;; magit
-   `(magit-item-highlight ((t (:background ,zenburn-bg+1))))
+   `(magit-item-highlight ((t (:background ,zenburn-bg+05))))
    `(magit-section-title ((t (:foreground ,zenburn-yellow :weight bold))))
    `(magit-process-ok ((t (:foreground ,zenburn-green :weight bold))))
    `(magit-process-ng ((t (:foreground ,zenburn-red :weight bold))))
@@ -714,7 +720,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(org-table ((t (:foreground ,zenburn-green+2))))
    `(org-tag ((t (:bold t :weight bold))))
    `(org-time-grid ((t (:foreground ,zenburn-orange))))
-   `(org-todo ((t (:background, zenburn-red-1 :bold t :foreground ,zenburn-bg :weight bold))))
+   `(org-todo ((t (:bold t :foreground ,zenburn-red :weight bold))))
    `(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
    `(org-warning ((t (:bold t :foreground ,zenburn-red :weight bold :underline nil))))
    `(org-column ((t (:background ,zenburn-bg-1))))
@@ -768,31 +774,18 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(proof-tactics-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,zenburn-bg))))
    `(proof-warning-face ((t (:foreground ,zenburn-bg :background ,zenburn-yellow-1))))
 ;;;;; rainbow-delimiters
-   `(rainbow-delimiters-depth-1-face ((t (:foreground ,zenburn-cyan))))
-   `(rainbow-delimiters-depth-2-face ((t (:foreground ,zenburn-yellow))))
-   `(rainbow-delimiters-depth-3-face ((t (:foreground ,zenburn-blue+1))))
-   `(rainbow-delimiters-depth-4-face ((t (:foreground ,zenburn-red+1))))
-   `(rainbow-delimiters-depth-5-face ((t (:foreground ,zenburn-green+1))))
-   `(rainbow-delimiters-depth-6-face ((t (:foreground ,zenburn-blue-1))))
-   `(rainbow-delimiters-depth-7-face ((t (:foreground ,zenburn-orange))))
-   `(rainbow-delimiters-depth-8-face ((t (:foreground ,zenburn-magenta))))
-   `(rainbow-delimiters-depth-9-face ((t (:foreground ,zenburn-yellow-2))))
-   `(rainbow-delimiters-depth-10-face ((t (:foreground ,zenburn-green+2))))
-   `(rainbow-delimiters-depth-11-face ((t (:foreground ,zenburn-blue+1))))
-   `(rainbow-delimiters-depth-12-face ((t (:foreground ,zenburn-red-4))))
-;;;;; rainbow-delimiters
-   ;; `(rainbow-delimiters-depth-1-face ((t (:foreground ,zenburn-fg))))
-   ;; `(rainbow-delimiters-depth-2-face ((t (:foreground ,zenburn-green+4))))
-   ;; `(rainbow-delimiters-depth-3-face ((t (:foreground ,zenburn-yellow-2))))
-   ;; `(rainbow-delimiters-depth-4-face ((t (:foreground ,zenburn-cyan))))
-   ;; `(rainbow-delimiters-depth-5-face ((t (:foreground ,zenburn-green+2))))
-   ;; `(rainbow-delimiters-depth-6-face ((t (:foreground ,zenburn-blue+1))))
-   ;; `(rainbow-delimiters-depth-7-face ((t (:foreground ,zenburn-yellow-1))))
-   ;; `(rainbow-delimiters-depth-8-face ((t (:foreground ,zenburn-green+1))))
-   ;; `(rainbow-delimiters-depth-9-face ((t (:foreground ,zenburn-blue-2))))
-   ;; `(rainbow-delimiters-depth-10-face ((t (:foreground ,zenburn-orange))))
-   ;; `(rainbow-delimiters-depth-11-face ((t (:foreground ,zenburn-green))))
-   ;; `(rainbow-delimiters-depth-12-face ((t (:foreground ,zenburn-blue-5))))
+   `(rainbow-delimiters-depth-1-face ((t (:foreground ,zenburn-fg))))
+   `(rainbow-delimiters-depth-2-face ((t (:foreground ,zenburn-green+4))))
+   `(rainbow-delimiters-depth-3-face ((t (:foreground ,zenburn-yellow-2))))
+   `(rainbow-delimiters-depth-4-face ((t (:foreground ,zenburn-cyan))))
+   `(rainbow-delimiters-depth-5-face ((t (:foreground ,zenburn-green+2))))
+   `(rainbow-delimiters-depth-6-face ((t (:foreground ,zenburn-blue+1))))
+   `(rainbow-delimiters-depth-7-face ((t (:foreground ,zenburn-yellow-1))))
+   `(rainbow-delimiters-depth-8-face ((t (:foreground ,zenburn-green+1))))
+   `(rainbow-delimiters-depth-9-face ((t (:foreground ,zenburn-blue-2))))
+   `(rainbow-delimiters-depth-10-face ((t (:foreground ,zenburn-orange))))
+   `(rainbow-delimiters-depth-11-face ((t (:foreground ,zenburn-green))))
+   `(rainbow-delimiters-depth-12-face ((t (:foreground ,zenburn-blue-5))))
 ;;;;; rcirc
    `(rcirc-my-nick ((t (:foreground ,zenburn-blue))))
    `(rcirc-other-nick ((t (:foreground ,zenburn-orange))))
@@ -1048,10 +1041,6 @@ This requires library `rainbow-mode'.")
                    (file-name-directory load-file-name))))
 
 (provide-theme 'zenburn)
-
-;;;###autoload
-(add-to-list 'safe-local-eval-forms
-             '(when (require 'rainbow-mode nil t) (rainbow-mode 1)))
 
 ;; Local Variables:
 ;; no-byte-compile: t

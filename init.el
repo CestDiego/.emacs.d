@@ -271,6 +271,8 @@
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'rcirc-mode)
 
+(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))

@@ -36,3 +36,4 @@ url
 /.tern-port
 /general-lisp/.tern-port
 /general-lisp/.#appearance.el
+/.mc-lists.el

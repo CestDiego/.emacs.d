@@ -30,6 +30,7 @@
      ("#073642" . 100))))
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
+ '(org-agenda-files (quote ("~/Documents/Org-Notes/GMAT-Dudes.org")))
  '(org-html-doctype "html5")
  '(org-latex-create-formula-image-program (quote imagemagick))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -60,7 +61,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "Consolas" :family "Consolas"))))
  '(mode-line ((t (:background "#202020" :foreground "#8FB28F" :inverse-video nil :box nil))))
  '(org-done ((t (:foreground "PaleGreen" :weight normal :strike-through t))))
  '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon" :strike-through t))))

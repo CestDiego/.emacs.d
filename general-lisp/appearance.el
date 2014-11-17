@@ -24,9 +24,11 @@
 
 (when (window-system)
   (set-frame-font "Consolas")
-  (set-face-attribute 'default nil :family "Consolas" :height 140)
+  (custom-set-faces '(default ((t (:background "black" :family "Consolas" :height 130 :embolden t)))))
   (set-face-font 'default "Consolas")
   (set-frame-parameter (selected-frame) 'alpha '(70 70))
+  ;; (set-face-attribute 'default nil
+  ;;                     :background "black")
   )
 
 ;; Don't defer screen updates when performing operations

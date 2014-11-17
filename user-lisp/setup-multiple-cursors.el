@@ -7,6 +7,9 @@
 ;;; Thanks to tkf on
 ;;; https://github.com/magnars/multiple-cursors.el/issues/19
 ;;; insert state has been changed to emacs state
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (defvar my-mc-evil-previous-state nil)
 
 (defun my-mc-evil-switch-to-emacs-state ()

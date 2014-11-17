@@ -118,6 +118,7 @@
      ;; Elisp
      dash 
      elisp-slime-nav
+     esup
      
      ;; Evil
      evil

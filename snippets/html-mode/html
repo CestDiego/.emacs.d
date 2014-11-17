@@ -2,6 +2,15 @@
 # name: <html>...</html>
 # key: html
 # --
-<html>
-  $0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<title>$1</title>
+$2
+</head>
+<body>
+$0
+</body>
 </html>

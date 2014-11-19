@@ -75,6 +75,7 @@
 
      ;; Git
      magit
+     ;; emacs-travis
      git-gutter
      gitconfig-mode
      gitignore-mode
@@ -86,11 +87,11 @@
      ;; Company Mode for Completions
      company
      company-tern
+     ;; company-anaconda
      company-ycmd
      ycmd
 
      dired-details
-     ;; auto-complete
      yasnippet
      flx-ido
      ido-ubiquitous
@@ -206,6 +207,7 @@
      elpy
      flycheck
      jedi
+     ;; anaconda-mode
      epc
      
      ;; Lua
@@ -221,14 +223,15 @@
      flymake-jshint
      tern
      skewer-mode
-     ;; ac-js2
 
      ;;Goodies
      smooth-scrolling 
      ace-jump-mode
      ox-reveal
      aggressive-indent
+     thumb-frm
      spray ;; Speed-reading
+     seethru ;; Change Transparency
      nyan-mode
 
      ;; jabber
@@ -257,6 +260,10 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+;; Transparency setup
+(require 'seethru)
+(seethru 75)
 
 ;; Emacs server
 (require 'server)

@@ -26,6 +26,15 @@
 (eval-after-load "company"
   '(diminish 'company-mode))
 
+(eval-after-load "tern"
+  '(diminish 'tern-mode))
+
+(eval-after-load "skewer"
+  '(diminish 'skewer-mode))
+
+(eval-after-load "requirejs"
+  '(diminish 'requirejs-mode))
+
 (eval-after-load "yasnippet"
   '(diminish 'yas-minor-mode))
 

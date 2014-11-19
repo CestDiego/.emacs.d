@@ -14,7 +14,11 @@
 (global-set-key (kbd "C-c y") 'company-yasnippet)
 
 (add-to-list 'company-backends 'company-tern)
-(add-to-list 'company-backends 'company-readline)
+
+(push 'company-readline company-backends)
+(add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
+
+(add-to-list 'company-backends 'company-anaconda)
 
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 

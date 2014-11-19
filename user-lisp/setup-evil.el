@@ -25,6 +25,7 @@
 (define-key global-map (kbd "C-s-+") 'evil-window-decrease-height)
 (define-key global-map (kbd "C-s--") 'evil-window-increase-height)
 
+(define-key global-map (kbd "C-M-S-.") 'evil-repeat-pop-next)
 
 ;; Add Evil mode
 (global-set-key (kbd "C-M-;") 'ace-jump-word-mode)

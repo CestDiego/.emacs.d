@@ -1,0 +1,8 @@
+# name : POST <url> {..}
+# key: POST
+# --
+POST ${1:url}
+$2
+{
+${0:key: value}
+}

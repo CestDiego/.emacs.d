@@ -26,10 +26,11 @@
   (set-frame-font "Consolas")
   (custom-set-faces '(default ((t (:background "black" :family "Consolas" :height 130 :embolden t)))))
   (set-face-font 'default "Consolas")
-  (set-frame-parameter (selected-frame) 'alpha '(70 70))
+  ;; (set-frame-parameter (selected-frame) 'alpha '(70 70))
   ;; (set-face-attribute 'default nil
   ;;                     :background "black")
   )
+
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

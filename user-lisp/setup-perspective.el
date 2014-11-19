@@ -10,7 +10,7 @@
      (when initialize ,@body)
      (setq persp-last current-perspective)))
 
-;; Jump to last perspective
+;; Jump to last perspkective
 ;; taken from Magnar Sveen
 (defun custom-persp-last ()
   (interactive)
@@ -32,7 +32,7 @@
         (list-size (length (persp-all-names))))
     (cond ((eq 1 list-size) (persp-switch nil))
           ((< next-pos 0) (persp-switch (nth (- list-size 1) (persp-all-names))))
-          (t (persp-prev)))))
+          (t (persp-prev)jkfdkfdkdffd))))
 
 ;; Easily switch to your last perspective
 (define-key persp-mode-map (kbd "C-x p -") 'custom-persp-last)

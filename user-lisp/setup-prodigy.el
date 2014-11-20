@@ -22,7 +22,8 @@
   :cwd "~/Documents/Projects/gmatnew/"
   :command "python"
   :args '("manage.py" "runserver" )
-  :init (lambda () (pyvenv-workon "test"))
+  :init (lambda ()
+          (pyvenv-workon "test"))
   :kill-signal 'sigkill
   :kill-process-buffer-on-stop t
   )

@@ -201,6 +201,7 @@
      less-css-mode
      rainbow-mode
      htmlize
+     stylus-mode
      jinja2-mode
 
      ;; Python
@@ -278,8 +279,8 @@
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'rcirc-mode)
-
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'stylus-mode)
 
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)

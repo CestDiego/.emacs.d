@@ -14,7 +14,7 @@
 (load-theme 'zenburn t)
 
 ;; Highlight current line
-(global-hl-line-mode 0)
+(global-hl-line-mode 1)
 
 ;; No scratch Message
 (setq initial-scratch-message ";; So this is you again, Diego\n\n")

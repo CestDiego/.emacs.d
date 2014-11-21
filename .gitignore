@@ -40,3 +40,4 @@ url
 /emacs-visited-files
 /bookmarks
 /site-misc/emacs-w3m/.#NEWS
+/async-bytecomp.log

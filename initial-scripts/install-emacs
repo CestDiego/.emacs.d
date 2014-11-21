@@ -5,7 +5,7 @@ mv ~/.emacs.d{,.old}
 
 echo "\n Cloning ... \n"
 
-if [ "$1" = "local" ]; then
+if [ "$1" = "--local" ]; then
     echo "Local dis"
 else
     git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d

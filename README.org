@@ -24,11 +24,15 @@ The main use of this .emacs.d configuration is to give users of the HackSpace co
 - TRAMP support out of the box
 - AutoComplete for Ispell and some major languages (pytho,haskell,C, etc)
 
+
+** Careful!
+This has only been testen on Ubuntu 14.04 if you have problems feel
+free to submit an issue/pull request
 * 2. Install
 ** Automated install
 Do you trust me?
 #+begin_src sh
-wget -O - emacs.hackspace.la | bash
+curl -L -O - emacs.hackspace.la | bash
 #+end_src
 
 ** Manual Install
@@ -37,13 +41,10 @@ wget -O - emacs.hackspace.la | bash
 git clone --recursive http://github.com/CestDiego/.emacs.d
 #+end_src
 
-Copy the .fonts folder into the ~ folder and then run
-
+Then execute the installer
 #+begin_src sh
-fc-cache -f -v
+~/.emacs.d/initial-scripts/install-emacs --local
 #+end_src
-
-** TODO lol
 * 3. Recommended settings
 
 * 4. Profiles

@@ -1,17 +1,15 @@
 #!/bin/bash
 
-echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-mv ~/.emacs.d ~/.emacs.d.old
-
-echo "\n Cloning ... \n"
-
 if [ "$1" = "--local" ]; then
-    echo "Local dis"
+    echo "Local dist"
 else
+    echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
+    mv ~/.emacs.d ~/.emacs.d.old
+    echo "\n Cloning ... \n"
     git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d
 fi
 
-if [ -f "/usr/bin/emacs" ] ; then
+if [ -f "/usr/bin/emacs" ] || [ -f "/usr/local/bin/emacs" ] ; then
     echo "\n Your emacs installation is valid \n"
     sleep 0.2
     echo "Proceding...."

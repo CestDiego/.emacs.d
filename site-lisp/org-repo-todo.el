@@ -48,7 +48,13 @@
 (autoload 'vc-svn-root "vc-svn")
 (autoload 'vc-hg-root "vc-hg")
 
-(push '("ort" "Org Repo Todo" checkitem (file (ort/todo-file)))
+;; (push '("ort" "Org Repo Todo" checkitem (file (ort/todo-file)))
+;;       org-capture-templates)
+
+(push '("ort" "Org Repo NTodo"
+        entry
+        (file+headline (ort/todo-file) "Tasks")
+        "* TODO  %?\t\t\t%T\n %i\n Link: %l\n Tags: %^g")
       org-capture-templates)
 
 (defun ort/todo-file ()
@@ -59,9 +65,9 @@
 With the argument DOTEMACS, find your .emacs.d's root folder."
   (let ((ort/dir (if dotemacs user-emacs-directory default-directory)))
     (or (vc-git-root ort/dir)
-        (vc-svn-root default-directory)
-        (vc-hg-root default-directory)
-        ort/dir)))
+       (vc-svn-root default-directory)
+       (vc-hg-root default-directory)
+       ort/dir)))
 
 ;;;###autoload
 (defun ort/goto-todos (&optional dotemacs)
@@ -82,31 +88,6 @@ With the argument DOTEMACS, capture the todo for your .emacs.d's TODO.org file."
         (ort/todo-root (ort/find-root dotemacs)))
     (org-capture nil "ort")
     (fit-window-to-buffer nil nil 5)))
-
-
-(defun eproject-grep (regexp)
-  "Search all files in the current project for REGEXP."
-  (interactive "sRegexp grep: ")
-  (let* ((root (eproject-root))
-         (default-directory root)
-         (files (eproject-list-project-files-relative root)))
-    (grep-compute-defaults)
-    (lgrep regexp (combine-and-quote-strings files) root)))
-
-(defcustom eproject-todo-expressions
-  '("TODO" "XXX" "FIXME")
-  "A list of tags for `eproject-todo' to search for when generating the project's TODO list."
-  :type '(repeat string))
-
-;;;###autoload
-(defun eproject-todo ()
-  "Display a project TODO list.
-Customize `eproject-todo-expressions' to control what this function looks for."
-  (interactive)
-  ;; TODO: display output in a buffer called *<project>-TODO* instead of *grep*.
-  (eproject-grep (regexp-opt eproject-todo-expressions)))
-
-
 
 (provide 'org-repo-todo)
 ;;; org-repo-todo.el ends here

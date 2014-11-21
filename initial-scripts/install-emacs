@@ -3,8 +3,11 @@
 if [ "$1" = "--local" ]; then
     echo "Local dist"
 else
-    echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-    mv ~/.emacs.d ~/.emacs.d.old
+    if [ -f "~/.emacs.d" ]; then
+        echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
+        mv ~/.emacs.d ~/.emacs.d.old
+    fi
+
     echo "\n Cloning ... \n"
     git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d
 fi
@@ -41,20 +44,21 @@ sudo cp /usr/share/hunspell/eu_ES.dic /usr/share/hunspell/castellano.dic
 echo "\n Setting up save-visited-files\n"
 touch ~/.emacs.d/emacs-visited-files
 
-echo "\n Starting Emacs in a separate window \n"
-emacs &
 
 echo "\n Installing Python Pip and Flake 8 \n"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
 
+echo "\n Starting Emacs in a separate window \n"
+emacs &
+
 echo "\n Setting up Aliases for emacs \n"
-if [$SHELL = '/bin/bash'];
+if ["$SHELL" = '/bin/bash'];
 then
     echo 'alias ec= "emacsclient -n"' >> ~/.bashrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.bashrc
     echo 'alias ect= "emacsclient -t"' >> ~/.bashrc
-elif [$SHELL = '/bin/zsh'];
+elif ["$SHELL" = '/bin/zsh'];
 then
     echo 'alias ec= "emacsclient -n"' >> ~/.zshrc
     echo 'alias ecn= "emacsclient -c"' >> ~/.zshrc

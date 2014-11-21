@@ -75,7 +75,8 @@
 
      ;; Git
      magit
-     ;; emacs-travis
+     ansi
+     travis
      git-gutter
      gitconfig-mode
      gitignore-mode
@@ -231,6 +232,8 @@
      ox-reveal
      aggressive-indent
      thumb-frm
+     mpages ;; Morning Pages
+     save-visited-files ;; Persist Open pages through sessions
      spray ;; Speed-reading
      seethru ;; Change Transparency
      nyan-mode
@@ -285,6 +288,9 @@
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))
+
+(require 'save-visited-files)
+(turn-on-save-visited-files-mode)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

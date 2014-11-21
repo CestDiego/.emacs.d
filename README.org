@@ -43,10 +43,7 @@ Copy the .fonts folder into the ~ folder and then run
 fc-cache -f -v
 #+end_src
 
-** TODO holi
-
-** DONE done
-CLOSED: [2014-11-20 Thu 19:41]
+** TODO lol
 * 3. Recommended settings
 
 * 4. Profiles

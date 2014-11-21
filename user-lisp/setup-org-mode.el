@@ -1,10 +1,4 @@
-(custom-set-faces
- '(org-done ((t (:foreground "PaleGreen"
-                             :weight normal
-                             :strike-through t))))
- '(org-headline-done
-   ((((class color) (min-colors 16) (background dark))
-     (:foreground "LightSalmon" :strike-through t)))))
+(setq org-directory "~/Documents/Org-Notes")
 
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
@@ -30,15 +24,15 @@
           '(lambda ()
              (define-key org-mode-map [(control tab)] nil)))
 
-          (defun yas/org-very-safe-expand ()
-            (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+(defun yas/org-very-safe-expand ()
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
 (add-hook 'org-mode-hook
-                    (lambda ()
-                      (make-variable-buffer-local 'yas/trigger-key)
-                      (setq yas/trigger-key [tab])
-                      (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-                      (define-key yas/keymap [tab] 'yas/next-field)))
+          (lambda ()
+            (make-variable-buffer-local 'yas/trigger-key)
+            (setq yas/trigger-key [tab])
+            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+            (define-key yas/keymap [tab] 'yas/next-field)))
 
 (setq org-src-preserve-indentation t)
 
@@ -59,18 +53,40 @@
 ;; Org-Notify
 (require 'org-notify)
 (org-notify-start)
-
 (org-notify-add 'appt
                 '(:time "-1s" :period "20s" :duration 10
-                  :actions (-message -ding))
+                        :actions (-message -ding))
                 '(:time "15m" :period "2m" :duration 100
-                  :actions -notify)
+                        :actions -notify)
                 '(:time "2h"  :period "5m" :actions -message)
                 '(:time "3d"  :actions -email))
 
 
 ;; Org MIME to Send HTML MAILS!
 (require 'org-mime)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "gtd.org" "Tasks")
+         "* TODO %?\n %i\n")
+        ("i" "For jotting quick ideas" entry (file+headline "gtd.org" "Ideas")
+         "* %?\n %i\n%t\n%A")
+        ("b" "Bookmark links" entry (file+headline "links.org" "Bookmarks")
+         "* %?%^g")
+        ("m" "Movies to see" entry (file "movies.org")
+         "* ToDownload %? \n  :PROPERTIES:\n  :DATE: %t\n  :URL: %c\n  :END:")
+        ("l" "Temp Links from the interwebs" item (file+headline "links.org" "Temporary Links")
+         "%?\nEntered on %U\n \%i\n %a")
+        ("w" "Weight Log" table-line (file+headline "weight.org" "Diario de Peso") " | %? | %t |")))
+
+(global-set-key (kbd "C-c ;") 'ort/capture-todo)
+(global-set-key (kbd "C-c '") 'ort/goto-todos)
+
+(add-hook 'prog-mode-hook (lambda ()
+                            (font-lock-add-keywords nil
+                                                    '(("\\<\\(FIXME\\|TODO\\|BUG\\):"
+                                                       1 font-lock-warning-face prepend)))))
+
+;; TODO: holi
 
 (setq org-mime-library 'mml)
 ;; The following key bindings are suggested, which bind the C-c M-o
@@ -83,4 +99,13 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key "\C-c\M-o" 'org-mime-org-buffer-htmlize)))
+
+(custom-set-faces
+ '(org-done ((t (:foreground "PaleGreen"
+                             :weight normal
+                             :strike-through t))))
+ '(org-headline-done
+   ((((class color) (min-colors 16) (background dark))
+     (:foreground "LightSalmon" :strike-through t)))))
+
 (provide 'setup-org-mode)

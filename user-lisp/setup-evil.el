@@ -12,7 +12,7 @@
 (require 'evil-lisp-state)
 (define-key evil-normal-state-map "L" 'evil-lisp-state)
 
-
+(setq evil-escape-key-sequence "nj")
 (evil-escape-mode)
 
 ;; Evil Numbers are evil

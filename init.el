@@ -232,6 +232,7 @@
      ox-reveal
      aggressive-indent
      thumb-frm
+     auto-dim-other-buffers ;; Pretty verbatim right?
      mpages ;; Morning Pages
      save-visited-files ;; Persist Open pages through sessions
      spray ;; Speed-reading
@@ -260,6 +261,9 @@
 ;; Load Mac-only config
 (when is-mac (require 'mac))
 
+;; _____________________________________________________________________________
+;; ________________________________ GOODIES ____________________________________
+;; _____________________________________________________________________________
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
@@ -269,6 +273,11 @@
 (require 'seethru)
 (seethru 75)
 
+
+
+;; _____________________________________________________________________________
+;; ______________________________ END GOODIES __________________________________
+;; _____________________________________________________________________________
 ;; Emacs server
 (require 'server)
 (unless (server-running-p)

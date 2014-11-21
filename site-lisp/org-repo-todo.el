@@ -51,7 +51,7 @@
 ;; (push '("ort" "Org Repo Todo" checkitem (file (ort/todo-file)))
 ;;       org-capture-templates)
 
-(push '("ort" "Org Repo NTodo"
+(push '("ort" "Org Repo Todo"
         entry
         (file+headline (ort/todo-file) "Tasks")
         "* TODO  %?\t\t\t%T\n %i\n Link: %l\n")

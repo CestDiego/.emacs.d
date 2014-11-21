@@ -78,6 +78,7 @@
          "%?\nEntered on %U\n \%i\n %a")
         ("w" "Weight Log" table-line (file+headline "weight.org" "Diario de Peso") " | %? | %t |")))
 
+(require 'org-repo-todo)
 (global-set-key (kbd "C-c ;") 'ort/capture-todo)
 (global-set-key (kbd "C-c '") 'ort/goto-todos)
 

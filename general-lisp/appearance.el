@@ -15,7 +15,7 @@
 
 ;; Highlight current line
 (global-hl-line-mode 1)
-
+(set-face-background 'region "#2f2f2f")
 ;; No scratch Message
 (setq initial-scratch-message ";; So this is you again, Diego\n\n")
 
@@ -23,8 +23,13 @@
 (show-paren-mode 1)
 
 (when (window-system)
+  (add-hook 'after-init-hook (lambda ()
+                               (when (fboundp 'auto-dim-other-buffers-mode)
+                                 (auto-dim-other-buffers-mode t))))
   (set-frame-font "Consolas")
-  (custom-set-faces '(default ((t (:background "black" :family "Consolas" :height 130 :embolden t)))))
+  (custom-set-faces
+   '(default ((t (:background "black" :family "Consolas" :height 130 :embolden t))))
+   '(auto-dim-other-buffers-face ((t (:background "#0a0a0a")))))
   (set-face-font 'default "Consolas")
   ;; (set-frame-parameter (selected-frame) 'alpha '(70 70))
   ;; (set-face-attribute 'default nil

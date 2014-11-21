@@ -5,8 +5,12 @@ mv ~/.emacs.d{,.old}
 
 echo "\n Cloning ... \n"
 
-# git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
-git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d
+if [ "$1" = "--git" ]; then
+    git clone --recursive https://www.github.com/CestDiego/.emacs.d.git ~/.emacs.d
+    echo 'holi'
+elif [ "$1" = "--cestdiego" ]; then
+    git clone --recursive git@github.com:CestDiego/.emacs.d.git ~/.emacs.d
+fi
 
 if [ -f "/usr/bin/emacs" ] ; then
     echo "\n Your emacs installation is valid \n"
@@ -37,12 +41,16 @@ sudo cp /usr/share/hunspell/en_US.dic /usr/share/hunspell/english.dic
 sudo cp /usr/share/hunspell/eu_ES.aff /usr/share/hunspell/castellano.aff
 sudo cp /usr/share/hunspell/eu_ES.dic /usr/share/hunspell/castellano.dic
 
+echo "\n Setting up save-visited-files\n"
+touch ~/.emacs.d/emacs-visited-files
+
 echo "\n Starting Emacs in a separate window \n"
 emacs &
 
 echo "\n Installing Python Pip and Flake 8 \n"
 sudo apt-get install python-pip python-dev -y
 sudo pip install flake8 epc jedi
+
 echo "\n Setting up Aliases for emacs \n"
 if [$SHELL = '/bin/bash'];
 then

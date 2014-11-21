@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Backing up old ~/.emacs.d as ~/.emacs.d.old"
-mv ~/.emacs.d{,.old}
+mv ~/.emacs.d ~/.emacs.d.old
 
 echo "\n Cloning ... \n"
 

@@ -25,6 +25,10 @@ fi
 echo "\n Installing Monaco Font \n"
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
 
+echo "\n Installing Consolas Font \n"
+cp -R ~/.emacs.d/.fonts ~/.fonts
+fc-cache -f -v
+
 echo "\n Installing huspell \n"
 sudo apt-get install hunspell hunspell-en-us hunspell-eu-es -y
 

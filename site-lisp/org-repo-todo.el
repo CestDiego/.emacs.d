@@ -54,7 +54,7 @@
 (push '("ort" "Org Repo NTodo"
         entry
         (file+headline (ort/todo-file) "Tasks")
-        "* TODO  %?\t\t\t%T\n %i\n Link: %l\n Tags: %^g")
+        "* TODO  %?\t\t\t%T\n %i\n Link: %l\n")
       org-capture-templates)
 
 (defun ort/todo-file ()

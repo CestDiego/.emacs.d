@@ -37,4 +37,5 @@
   ;;     (after slime-scratch-adjust-modes () activate compile)
   ;;   (turn-some-mode-off)
   ;;   (turn-some-other-mode-on))
+  
   )

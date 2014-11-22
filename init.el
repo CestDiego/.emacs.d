@@ -234,7 +234,6 @@
      thumb-frm
      auto-dim-other-buffers ;; Pretty verbatim right?
      mpages ;; Morning Pages
-     save-visited-files ;; Persist Open pages through sessions
      spray ;; Speed-reading
      seethru ;; Change Transparency
      nyan-mode
@@ -297,9 +296,6 @@
 ;; Load user specific configuration
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))
-
-(require 'save-visited-files)
-(turn-on-save-visited-files-mode)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

@@ -301,5 +301,9 @@
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))
 
+(setq browse-url-generic-program
+      (substring (shell-command-to-string "gconftool-2 -g /desktop/gnome/applications/browser/exec") 0 -1)
+      browse-url-browser-function 'browse-url-generic)
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

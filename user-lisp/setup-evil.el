@@ -37,6 +37,7 @@
 (evil-leader/set-key
   "v" 'visual-line-mode
   "s" 'sudo-edit
+  "d" 'ediff-buffers
   "0" 'delete-window
   "g" 'magit-status
   "j"  '(lambda nil (interactive) (split-window-vertically) (other-window 1))

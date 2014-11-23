@@ -3,6 +3,18 @@
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 
+;; Evil
+(require 'evil)
+(define-key evil-window-map (kbd "C-h") 'evil-window-left)
+(define-key evil-window-map (kbd "C-j") 'evil-window-down)
+(define-key evil-window-map (kbd "C-k") 'evil-window-up)
+(define-key evil-window-map (kbd "C-l") 'evil-window-right)
+
+(define-key evil-window-map "h" 'evil-window-move-far-left)
+(define-key evil-window-map "j" 'evil-window-move-very-bottom)
+(define-key evil-window-map "k" 'evil-window-move-very-top)
+(define-key evil-window-map "l" 'evil-window-move-far-right)
+
 ;; helm
 (global-set-key (kbd "C-c o") 'helm-overlord)
 (global-set-key (kbd "M-x") 'helm-M-x)

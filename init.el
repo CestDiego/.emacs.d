@@ -229,6 +229,7 @@
      ;;Goodies
      smooth-scrolling 
      ace-jump-mode
+     paradox
      ox-reveal
      aggressive-indent
      thumb-frm
@@ -263,6 +264,7 @@
 ;; _____________________________________________________________________________
 ;; ________________________________ GOODIES ____________________________________
 ;; _____________________________________________________________________________
+
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
@@ -272,6 +274,8 @@
 (require 'seethru)
 (seethru 75)
 
+;; Here you put your own github token for when you use paradox-list-packages
+(setq paradox-github-token "83a6194df4e80edc925fbaf6ee718eed71cbd2ef")
 
 
 ;; _____________________________________________________________________________

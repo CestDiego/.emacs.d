@@ -26,6 +26,9 @@
 (eval-after-load "company"
   '(diminish 'company-mode))
 
+(eval-after-load "auto-dim-other-buffers"
+  '(diminish 'auto-dim-other-buffers-mode))
+
 (eval-after-load "tern"
   '(diminish 'tern-mode))
 

@@ -88,6 +88,7 @@
      ;; Company Mode for Completions
      company
      company-tern
+     company-math
      ;; company-anaconda
      company-ycmd
      ycmd

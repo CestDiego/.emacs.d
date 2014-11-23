@@ -18,7 +18,8 @@
 (push 'company-readline company-backends)
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
-(add-to-list 'company-backends 'company-anaconda)
+;; global activation of the unicode symbol completion
+(add-to-list 'company-backend 'company-math-symbols-unicode)
 
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 

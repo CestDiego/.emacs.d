@@ -1,5 +1,5 @@
 (require 'tex)
-(require 'ac-math)
+;; (require 'ac-math)
 ;; We are only using LaTeX and not TeX, Remember that if in the future you want to use TeX
 ;; you have to change this setting
 (setq TeX-default-mode 'LaTeX-mode) ; Default mode for .tex files
@@ -31,7 +31,7 @@
 ;;      (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
 ;;                ac-sources)))
 
-(add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
+;; (add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
 (add-hook 'LaTeX-mode-hook (lambda () (set-input-method "latin-1-prefix")))
 (add-hook 'LaTeX-mode-hook (lambda () (flyspell-mode 1)))
 

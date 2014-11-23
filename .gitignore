@@ -23,6 +23,8 @@ projectile-bookmarks.eld
 cider-history
 projectile.cache
 url
+\#*\#
+\.\#*
 /custom.fas
 /custom.lib
 /.python-environments/
@@ -41,3 +43,4 @@ url
 /bookmarks
 /site-misc/emacs-w3m/.#NEWS
 /async-bytecomp.log
+/general-lisp/custom.el

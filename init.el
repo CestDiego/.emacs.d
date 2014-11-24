@@ -30,8 +30,9 @@
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" general-lisp-dir))
-(when '(find-file custom-file)
-  (load custom-file))
+(unless '(find-file custom-file)
+  (write-region "" nil custom-file))
+(load custom-file)
 
 ;; Set up appearance early
 (require 'appearance)

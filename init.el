@@ -28,14 +28,14 @@
 (add-to-list 'load-path user-lisp-dir)
 (add-to-list 'load-path w3m-lisp-dir)
 
+;; Set up appearance early
+(require 'appearance)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" general-lisp-dir))
 (unless '(find-file custom-file)
   (write-region "" nil custom-file))
 (load custom-file)
-
-;; Set up appearance early
-(require 'appearance)
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -276,7 +276,7 @@
 
 ;; Transparency setup
 (require 'seethru)
-(seethru 75)
+(seethru 100)
 
 ;; Here you put your own github token for when you use paradox-list-packages
 (setq paradox-github-token "83a6194df4e80edc925fbaf6ee718eed71cbd2ef")

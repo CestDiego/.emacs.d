@@ -1,1 +1,7 @@
 * Tasks
+*** DONE Explain Paradox Github Token Permission    :group Documentation                      <2014-11-23 Sun 21:47>
+CLOSED: [2014-11-23 Sun 22:18]
+Paradox is a great tool for viewing in a better way the packages
+
+
+ Link: file:~/.emacs.d/init.el::%3B%3B%20Here%20you%20put%20your%20own%20github%20token%20for%20when%20you%20use%20paradox-list-packages

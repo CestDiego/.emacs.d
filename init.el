@@ -21,6 +21,7 @@
 (setq w3m-lisp-dir
       (expand-file-name "site-misc/emacs-w3m" user-emacs-directory))
 
+
 ;; Set up load path
 (add-to-list 'load-path general-lisp-dir)
 (add-to-list 'load-path site-lisp-dir)
@@ -29,7 +30,8 @@
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" general-lisp-dir))
-(load custom-file)
+(when '(find-file custom-file)
+  (load custom-file))
 
 ;; Set up appearance early
 (require 'appearance)

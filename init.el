@@ -236,7 +236,7 @@
      paradox
      ox-reveal
      aggressive-indent
-     thumb-frm
+     wakatime-mode ;; This keeps track of your time in Emacs
      auto-dim-other-buffers ;; Pretty verbatim right?
      mpages ;; Morning Pages
      spray ;; Speed-reading
@@ -281,6 +281,12 @@
 ;; Here you put your own github token for when you use paradox-list-packages
 (setq paradox-github-token "83a6194df4e80edc925fbaf6ee718eed71cbd2ef")
 
+;; For wakatime see this https://wakatime.com/help/plugins/emacs
+
+(require 'wakatime-mode)
+(setq wakatime-api-key "813b0d78-1f17-43eb-bede-a5c008651d4a")
+(setq wakatime-cli-path "/usr/local/bin/wakatime")
+(global-wakatime-mode)
 
 ;; _____________________________________________________________________________
 ;; ______________________________ END GOODIES __________________________________

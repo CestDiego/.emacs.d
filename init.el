@@ -283,10 +283,10 @@
 
 ;; For wakatime see this https://wakatime.com/help/plugins/emacs
 
-(require 'wakatime-mode)
-(setq wakatime-api-key "813b0d78-1f17-43eb-bede-a5c008651d4a")
-(setq wakatime-cli-path "/usr/local/bin/wakatime")
-(global-wakatime-mode)
+;; (require 'wakatime-mode)
+;; (setq wakatime-api-key "813b0d78-1f17-43eb-bede-a5c008651d4a")
+;; (setq wakatime-cli-path "/usr/local/bin/wakatime")
+;; (global-wakatime-mode)
 
 ;; _____________________________________________________________________________
 ;; ______________________________ END GOODIES __________________________________

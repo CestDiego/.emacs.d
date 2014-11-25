@@ -1,3 +1,7 @@
+;;; Commentary:
+;;; This file is in charge of all appearance related stuff
+
+;;; Code:
 (setq visible-bell t
       font-lock-maximum-decoration t
       color-theme-is-global t
@@ -11,11 +15,11 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-(load-theme 'zenburn t)
+(load-theme 'hc-zenburn t)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
-(set-face-background 'region "#2f2f2f")
+(set-face-background 'region "#202020")
 ;; No scratch Message
 (setq initial-scratch-message ";; So this is you again, Diego\n\n")
 
@@ -28,13 +32,9 @@
                                  (auto-dim-other-buffers-mode t))))
   (set-frame-font "Consolas")
   (custom-set-faces
-   '(default ((t (:background "black" :family "Consolas" :height 130 :embolden t))))
-   '(auto-dim-other-buffers-face ((t (:background "#0a0a0a")))))
-  (set-face-font 'default "Consolas")
-  ;; (set-frame-parameter (selected-frame) 'alpha '(70 70))
-  ;; (set-face-attribute 'default nil
-  ;;                     :background "black")
-  )
+   '(default ((t (:family "Consolas" :height 130 :embolden t))))
+   '(auto-dim-other-buffers-face ((t (:background "#1f1f1f")))))
+  (set-face-font 'default "Consolas"))
 
 
 ;; Don't defer screen updates when performing operations

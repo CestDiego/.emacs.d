@@ -43,6 +43,7 @@
   "j"  '(lambda nil (interactive) (split-window-vertically) (other-window 1))
   "l"  '(lambda nil (interactive) (split-window-horizontally) (other-window 1))
   "o" 'other-window
+  "?" 'helm-descbinds
   "<SPC>" 'dired-jump)
 
 

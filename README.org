@@ -2,9 +2,6 @@
 #+EMAIL:	cestdiego@gmail.com
 #+STARTUP:	content
 #+STARTUP:      indent
-[[Gitter][https://badges.gitter.im/Join Chat.sv]]
-
-[[file:https://gitter.im/CestDiego/.emacs.d?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]]
 
 * 1. Install
 ** Automated install

@@ -45,7 +45,7 @@ sudo cp /usr/share/hunspell/eu_ES.dic /usr/share/hunspell/castellano.dic
 
 echo "\n Installing Python Pip and Flake 8 \n"
 sudo apt-get install python-pip python-dev -y
-sudo pip install flake8 epc jedi
+sudo pip install flake8 epc jedi wakatime
 
 echo "\n Starting Emacs in a separate window \n"
 emacs &

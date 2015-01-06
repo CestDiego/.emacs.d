@@ -5,3 +5,9 @@ Paradox is a great tool for viewing in a better way the packages
 
 
  Link: file:~/.emacs.d/init.el::%3B%3B%20Here%20you%20put%20your%20own%20github%20token%20for%20when%20you%20use%20paradox-list-packages
+- [ ] Amiguito no seas webon 
+** TODO  WHatever you do don't fuck with me okay?      <2014-11-25 Tue 23:04>
+  
+  Link: file:~/.emacs.d.cestdiego/site-lisp/org-repo-todo.el::(file%2Bheadline%20(ort/todo-file)%20"Tasks")
+* Checklist
+- [ ] buy bread 

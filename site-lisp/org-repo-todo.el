@@ -32,6 +32,7 @@
 ;; the relevent functions to keybindings of your choice, i.e.:
 ;;
 ;;   (global-set-key (kbd "C-;") 'ort/capture-todo)
+;;   (global-set-key (kbd "C-`") 'ort/capture-todo)
 ;;   (global-set-key (kbd "C-'") 'ort/goto-todos)
 ;;
 ;; Using the `C-u' command prefix with either of these commands will
@@ -55,6 +56,11 @@
         entry
         (file+headline (ort/todo-file) "Tasks")
         "* TODO  %?\t\t\t%T\n %i\n Link: %l\n")
+      org-capture-templates)
+
+(push '("ortcheck" "Org Repo Todo Checklist" 
+        checkitem
+        (file+headline (ort/todo-file) "Checklist"))
       org-capture-templates)
 
 (defun ort/todo-file ()
@@ -87,6 +93,18 @@ With the argument DOTEMACS, capture the todo for your .emacs.d's TODO.org file."
         (split-height-threshold 0)
         (ort/todo-root (ort/find-root dotemacs)))
     (org-capture nil "ort")
+    (fit-window-to-buffer nil nil 5)))
+
+;;;###autoload
+(defun ort/capture-todo-check (&optional dotemacs)
+  "Capture a todo for the current repo in an `org-capture' popup window.
+With the argument DOTEMACS, capture the todo for your .emacs.d's TODO.org file."
+  (interactive "P")
+  ;; make window split horizontally
+  (let ((split-width-threshold nil)
+        (split-height-threshold 0)
+        (ort/todo-root (ort/find-root dotemacs)))
+    (org-capture nil "ortcheck")
     (fit-window-to-buffer nil nil 5)))
 
 (provide 'org-repo-todo)

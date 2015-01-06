@@ -32,7 +32,7 @@
         (list-size (length (persp-all-names))))
     (cond ((eq 1 list-size) (persp-switch nil))
           ((< next-pos 0) (persp-switch (nth (- list-size 1) (persp-all-names))))
-          (t (persp-prev)jkfdkfdkdffd))))
+          (t (persp-prev)))))
 
 ;; Easily switch to your last perspective
 (define-key persp-mode-map (kbd "C-x p -") 'custom-persp-last)
